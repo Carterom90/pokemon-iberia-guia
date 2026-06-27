@@ -4,416 +4,135 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pokémon Iberia — Guía Offline</title>
-<style>
-  :root {
-    --rojo: #c0392b;
-    --rojo-oscuro: #922b21;
-    --amarillo: #f39c12;
-    --fondo: #1a1a2e;
-    --panel: #16213e;
-    --panel2: #0f3460;
-    --texto: #e8e8e8;
-    --texto-suave: #a0a8b8;
-    --borde: #2a3a5a;
-    --verde: #27ae60;
-    --azul: #2980b9;
-    --morado: #8e44ad;
-    --naranja: #e67e22;
-    --hielo: #74b9ff;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--fondo);
-    color: var(--texto);
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    font-size: 14px;
-    min-height: 100vh;
-  }
-
-  header {
-    background: linear-gradient(135deg, var(--rojo-oscuro), var(--rojo), var(--amarillo));
-    padding: 20px 24px 16px;
-    text-align: center;
-    border-bottom: 3px solid var(--amarillo);
-  }
-  header h1 {
-    font-size: 1.8rem;
-    font-weight: 900;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-    color: #fff;
-  }
-  header p {
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.85);
-    margin-top: 4px;
-    letter-spacing: 1px;
-  }
-
-  /* TABS */
-  .tabs {
-    display: flex;
-    background: var(--panel);
-    border-bottom: 2px solid var(--borde);
-    overflow-x: auto;
-  }
-  .tab-btn {
-    flex: 1;
-    min-width: 140px;
-    padding: 12px 8px;
-    background: none;
-    border: none;
-    color: var(--texto-suave);
-    cursor: pointer;
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    border-bottom: 3px solid transparent;
-    transition: all 0.2s;
-    text-transform: uppercase;
-  }
-  .tab-btn:hover { color: var(--texto); background: rgba(255,255,255,0.04); }
-  .tab-btn.active { color: var(--amarillo); border-bottom-color: var(--amarillo); background: rgba(243,156,18,0.08); }
-
-  .tab-content { display: none; padding: 16px; max-width: 960px; margin: 0 auto; }
-  .tab-content.active { display: block; }
-
-  /* SEARCH */
-  .search-bar {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 16px;
-  }
-  .search-bar input {
-    flex: 1;
-    background: var(--panel);
-    border: 1px solid var(--borde);
-    border-radius: 8px;
-    padding: 10px 14px;
-    color: var(--texto);
-    font-size: 0.88rem;
-    outline: none;
-  }
-  .search-bar input:focus { border-color: var(--amarillo); }
-  .search-bar input::placeholder { color: var(--texto-suave); }
-
-  /* RUTA CARD */
-  .ruta-card {
-    background: var(--panel);
-    border: 1px solid var(--borde);
-    border-radius: 10px;
-    margin-bottom: 12px;
-    overflow: hidden;
-  }
-  .ruta-header {
-    display: flex;
-    align-items: center;
-    padding: 10px 14px;
-    cursor: pointer;
-    background: var(--panel2);
-    user-select: none;
-    gap: 10px;
-  }
-  .ruta-header:hover { background: #1a3a60; }
-  .ruta-num {
-    background: var(--rojo);
-    color: #fff;
-    font-weight: 800;
-    font-size: 0.72rem;
-    border-radius: 5px;
-    padding: 2px 7px;
-    min-width: 36px;
-    text-align: center;
-    letter-spacing: 0.5px;
-  }
-  .ruta-nombre {
-    font-weight: 700;
-    font-size: 0.95rem;
-    flex: 1;
-  }
-  .ruta-toggle {
-    color: var(--texto-suave);
-    font-size: 0.9rem;
-    transition: transform 0.2s;
-  }
-  .ruta-toggle.open { transform: rotate(180deg); }
-
-  .ruta-body { display: none; padding: 12px 14px; }
-  .ruta-body.open { display: block; }
-
-  .habitat-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--texto-suave);
-    margin: 10px 0 6px;
-    padding-bottom: 3px;
-    border-bottom: 1px solid var(--borde);
-  }
-  .habitat-label:first-child { margin-top: 0; }
-
-  table { width: 100%; border-collapse: collapse; }
-  th {
-    text-align: left;
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: var(--texto-suave);
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    padding: 4px 8px;
-    border-bottom: 1px solid var(--borde);
-  }
-  td {
-    padding: 5px 8px;
-    font-size: 0.85rem;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-  }
-  tr:last-child td { border-bottom: none; }
-  tr:hover td { background: rgba(255,255,255,0.03); }
-
-  .pct {
-    font-size: 0.75rem;
-    color: var(--texto-suave);
-    font-weight: 600;
-  }
-  .niveles { color: var(--amarillo); font-weight: 600; font-size: 0.8rem; }
-
-  /* TIPOS */
-  .tipo { display: inline-block; padding: 1px 7px; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; margin: 1px 1px; }
-  .t-Agua { background:#2980b9; color:#fff; }
-  .t-Fuego { background:#e74c3c; color:#fff; }
-  .t-Planta { background:#27ae60; color:#fff; }
-  .t-Eléctrico { background:#f39c12; color:#000; }
-  .t-Tierra { background:#d35400; color:#fff; }
-  .t-Roca { background:#7f8c8d; color:#fff; }
-  .t-Hielo { background:#74b9ff; color:#000; }
-  .t-Psíquico { background:#8e44ad; color:#fff; }
-  .t-Fantasma { background:#6c3483; color:#fff; }
-  .t-Dragón { background:#1a5276; color:#fff; }
-  .t-Siniestro { background:#2c3e50; color:#fff; }
-  .t-Acero { background:#85929e; color:#fff; }
-  .t-Normal { background:#aab7b8; color:#000; }
-  .t-Lucha { background:#922b21; color:#fff; }
-  .t-Veneno { background:#7d3c98; color:#fff; }
-  .t-Volador { background:#3498db; color:#fff; }
-  .t-Bicho { background:#1e8449; color:#fff; }
-  .t-Hada { background:#f1948a; color:#000; }
-
-  /* MISIONES */
-  .mision-card {
-    background: var(--panel);
-    border: 1px solid var(--borde);
-    border-radius: 10px;
-    margin-bottom: 10px;
-    overflow: hidden;
-  }
-  .mision-header {
-    display: flex;
-    align-items: center;
-    padding: 12px 14px;
-    cursor: pointer;
-    gap: 10px;
-    background: var(--panel2);
-  }
-  .mision-header:hover { background: #1a3a60; }
-  .mision-icon {
-    width: 32px; height: 32px;
-    background: var(--rojo);
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1rem;
-    flex-shrink: 0;
-  }
-  .mision-titulo { font-weight: 700; font-size: 0.95rem; flex: 1; }
-  .mision-body { display: none; padding: 12px 14px; font-size: 0.85rem; line-height: 1.6; color: var(--texto-suave); }
-  .mision-body.open { display: block; }
-  .mision-body p { margin-bottom: 8px; }
-  .mision-body strong { color: var(--texto); }
-  .mision-body .reward {
-    display: inline-block;
-    background: rgba(243,156,18,0.15);
-    border: 1px solid rgba(243,156,18,0.4);
-    color: var(--amarillo);
-    border-radius: 5px;
-    padding: 3px 10px;
-    font-size: 0.78rem;
-    font-weight: 700;
-    margin-top: 4px;
-  }
-
-  /* ESPECIAL */
-  .especial-list { display: flex; flex-direction: column; gap: 8px; }
-  .especial-item {
-    background: var(--panel);
-    border: 1px solid var(--borde);
-    border-radius: 8px;
-    padding: 10px 14px;
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .especial-poke {
-    font-weight: 800;
-    color: var(--amarillo);
-    min-width: 100px;
-    font-size: 0.9rem;
-  }
-  .especial-como { font-size: 0.83rem; color: var(--texto-suave); line-height: 1.5; }
-  .especial-como strong { color: var(--texto); }
-
-  /* COUNT */
-  .count-badge {
-    display: inline-block;
-    background: rgba(243,156,18,0.15);
-    border: 1px solid rgba(243,156,18,0.3);
-    color: var(--amarillo);
-    font-size: 0.72rem;
-    font-weight: 700;
-    border-radius: 12px;
-    padding: 2px 10px;
-    margin-left: 6px;
-  }
-
-  .section-title {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--rojo);
-    margin: 0 0 12px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid var(--borde);
-  }
-
-  .hidden { display: none !important; }
-
-  footer {
-    text-align: center;
-    padding: 20px;
-    color: var(--texto-suave);
-    font-size: 0.72rem;
-    border-top: 1px solid var(--borde);
-    margin-top: 20px;
-  }
-</style>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#c0392b">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="PK Iberia">
-<link rel="apple-touch-icon" href="icon-192.png">
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').catch(e => console.log('SW error:', e));
-}
-
-function cachearSprites() {
-  if (!('serviceWorker' in navigator)) {
-    document.getElementById('cache-status').textContent = '⚠️ Service Worker no disponible';
-    return;
-  }
-  document.getElementById('btn-cache').disabled = true;
-  document.getElementById('cache-status').textContent = 'Descargando fotos... (puede tardar 1-2 min)';
-  navigator.serviceWorker.ready.then(reg => {
-    reg.active.postMessage('precache-sprites');
-  });
-  navigator.serviceWorker.addEventListener('message', e => {
-    if (e.data.type === 'sprite-progress') {
-      document.getElementById('cache-status').textContent = `Descargando... ${e.data.done}/${e.data.total}`;
-    } else if (e.data.type === 'sprite-done') {
-      document.getElementById('cache-status').textContent = `✅ ${e.data.cached} fotos guardadas offline`;
-      document.getElementById('btn-cache').disabled = false;
-    }
-  });
-}
-
-</script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(e=>console.log('SW:',e));}</script>
+<style>
+:root{--rojo:#c0392b;--rojo-oscuro:#922b21;--amarillo:#f39c12;--fondo:#1a1a2e;--panel:#16213e;--panel2:#0f3460;--texto:#e8e8e8;--texto-suave:#a0a8b8;--borde:#2a3a5a;--verde:#27ae60;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--fondo);color:var(--texto);font-family:'Segoe UI',system-ui,sans-serif;font-size:14px;min-height:100vh;}
+header{background:linear-gradient(135deg,var(--rojo-oscuro),var(--rojo),var(--amarillo));padding:16px 24px;text-align:center;border-bottom:3px solid var(--amarillo);}
+header h1{font-size:1.6rem;font-weight:900;letter-spacing:2px;text-shadow:2px 2px 8px rgba(0,0,0,0.6);color:#fff;}
+header p{font-size:0.75rem;color:rgba(255,255,255,0.85);margin-top:4px;}
+.tabs{display:flex;background:var(--panel);border-bottom:2px solid var(--borde);overflow-x:auto;}
+.tab-btn{flex:0 0 auto;padding:12px 14px;background:none;border:none;color:var(--texto-suave);cursor:pointer;font-size:0.75rem;font-weight:600;letter-spacing:0.5px;border-bottom:3px solid transparent;transition:all 0.2s;white-space:nowrap;}
+.tab-btn:hover{color:var(--texto);background:rgba(255,255,255,0.04);}
+.tab-btn.active{color:var(--amarillo);border-bottom-color:var(--amarillo);background:rgba(243,156,18,0.08);}
+.tab-content{display:none;padding:16px;max-width:960px;margin:0 auto;}
+.tab-content.active{display:block;}
+.search-bar{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
+.search-bar input,.search-bar select{flex:1;min-width:120px;background:var(--panel);border:1px solid var(--borde);border-radius:8px;padding:10px 14px;color:var(--texto);font-size:0.88rem;outline:none;}
+.search-bar input:focus,.search-bar select:focus{border-color:var(--amarillo);}
+.search-bar input::placeholder{color:var(--texto-suave);}
+.ruta-card{background:var(--panel);border:1px solid var(--borde);border-radius:10px;margin-bottom:12px;overflow:hidden;}
+.ruta-header{display:flex;align-items:center;padding:10px 14px;cursor:pointer;background:var(--panel2);gap:10px;user-select:none;}
+.ruta-header:hover{background:#1a3a60;}
+.ruta-num{background:var(--rojo);color:#fff;font-weight:800;font-size:0.72rem;border-radius:5px;padding:2px 7px;min-width:36px;text-align:center;}
+.ruta-nombre{font-weight:700;font-size:0.95rem;flex:1;}
+.ruta-toggle{color:var(--texto-suave);transition:transform 0.2s;}
+.ruta-toggle.open{transform:rotate(180deg);}
+.ruta-body{display:none;padding:12px 14px;}
+.ruta-body.open{display:block;}
+.habitat-label{font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--texto-suave);margin:10px 0 6px;padding-bottom:3px;border-bottom:1px solid var(--borde);}
+.habitat-label:first-child{margin-top:0;}
+table{width:100%;border-collapse:collapse;}
+th{text-align:left;font-size:0.7rem;font-weight:700;color:var(--texto-suave);text-transform:uppercase;letter-spacing:0.8px;padding:4px 8px;border-bottom:1px solid var(--borde);}
+td{padding:5px 8px;font-size:0.85rem;border-bottom:1px solid rgba(255,255,255,0.04);}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(255,255,255,0.03);}
+.pct{font-size:0.75rem;color:var(--texto-suave);font-weight:600;}
+.niveles{color:var(--amarillo);font-weight:600;font-size:0.8rem;}
+.tipo{display:inline-block;padding:1px 7px;border-radius:4px;font-size:0.68rem;font-weight:700;letter-spacing:0.5px;margin:1px;}
+.t-Agua{background:#2980b9;color:#fff}.t-Fuego{background:#e74c3c;color:#fff}.t-Planta{background:#27ae60;color:#fff}
+.t-Eléctrico{background:#f39c12;color:#000}.t-Tierra{background:#d35400;color:#fff}.t-Roca{background:#7f8c8d;color:#fff}
+.t-Hielo{background:#74b9ff;color:#000}.t-Psíquico{background:#8e44ad;color:#fff}.t-Fantasma{background:#6c3483;color:#fff}
+.t-Dragón{background:#1a5276;color:#fff}.t-Siniestro{background:#2c3e50;color:#fff}.t-Acero{background:#85929e;color:#fff}
+.t-Normal{background:#aab7b8;color:#000}.t-Lucha{background:#922b21;color:#fff}.t-Veneno{background:#7d3c98;color:#fff}
+.t-Volador{background:#3498db;color:#fff}.t-Bicho{background:#1e8449;color:#fff}.t-Hada{background:#f1948a;color:#000}
+.especial-list{display:flex;flex-direction:column;gap:8px;}
+.especial-item{background:var(--panel);border:1px solid var(--borde);border-radius:8px;padding:10px 14px;display:flex;align-items:flex-start;gap:12px;}
+.especial-poke{font-weight:800;color:var(--amarillo);min-width:100px;font-size:0.9rem;}
+.especial-como{font-size:0.83rem;color:var(--texto-suave);line-height:1.5;}
+.especial-como strong{color:var(--texto);}
+.mision-card{background:var(--panel);border:1px solid var(--borde);border-radius:10px;margin-bottom:10px;overflow:hidden;}
+.mision-header{display:flex;align-items:center;padding:12px 14px;cursor:pointer;gap:10px;background:var(--panel2);}
+.mision-header:hover{background:#1a3a60;}
+.mision-icon{width:32px;height:32px;background:var(--rojo);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.mision-titulo{font-weight:700;font-size:0.95rem;flex:1;}
+.mision-body{display:none;padding:12px 14px;font-size:0.85rem;line-height:1.6;color:var(--texto-suave);}
+.mision-body.open{display:block;}
+.mision-body strong{color:var(--texto);}
+.reward{display:inline-block;background:rgba(243,156,18,0.15);border:1px solid rgba(243,156,18,0.4);color:var(--amarillo);border-radius:5px;padding:3px 10px;font-size:0.78rem;font-weight:700;margin-top:4px;}
+.count-badge{display:inline-block;background:rgba(243,156,18,0.15);border:1px solid rgba(243,156,18,0.3);color:var(--amarillo);font-size:0.72rem;font-weight:700;border-radius:12px;padding:2px 10px;margin-left:6px;}
+.section-title{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--rojo);margin:0 0 12px;padding-bottom:6px;border-bottom:1px solid var(--borde);}
+.hidden{display:none!important;}
+footer{text-align:center;padding:20px;color:var(--texto-suave);font-size:0.72rem;border-top:1px solid var(--borde);margin-top:20px;}
+</style>
 </head>
 <body>
-
 <header>
   <h1>🏖️ POKÉMON IBERIA</h1>
-  <p>Guía Offline v2.04 · Pokémon por Ruta · Obtención Especial · Misiones Secundarias</p>
+  <p>Guía Offline v2.04 · Gen 1-8 completa</p>
 </header>
 
 <div class="tabs">
-  <button class="tab-btn active" onclick="showTab('rutas', this)">🗺️ Pokémon por Ruta</button>
-  <button class="tab-btn" onclick="showTab('especial', this)">⭐ Obtención Especial</button>
-  <button class="tab-btn" onclick="showTab('misiones', this)">📋 Misiones Secundarias</button>
-  <button class="tab-btn" onclick="showTab('legendarios', this)">✨ Legendarios</button>
-  <button class="tab-btn" onclick="showTab('formas', this)">🦎 Formas Iberia</button>
-  <button class="tab-btn" onclick="showTab('objetos', this)">🎒 Objetos Clave</button>
-  <button class="tab-btn" onclick="showTab('pokedex', this)">📖 Pokédex</button>
+  <button class="tab-btn active" onclick="showTab('rutas',this)">🗺️ Rutas</button>
+  <button class="tab-btn" onclick="showTab('especial',this)">⭐ Especial</button>
+  <button class="tab-btn" onclick="showTab('misiones',this)">📋 Misiones</button>
+  <button class="tab-btn" onclick="showTab('legendarios',this)">✨ Legendarios</button>
+  <button class="tab-btn" onclick="showTab('formas',this)">🦎 Formas</button>
+  <button class="tab-btn" onclick="showTab('objetos',this)">🎒 Objetos</button>
+  <button class="tab-btn" onclick="showTab('pokedex',this)">📖 Pokédex</button>
 </div>
 
-<!-- ============ TAB: RUTAS ============ -->
 <div id="tab-rutas" class="tab-content active">
-  <div class="search-bar">
-    <input type="text" id="buscar-ruta" placeholder="Buscar ruta o Pokémon..." oninput="filtrarRutas()">
-  </div>
+  <div class="search-bar"><input type="text" id="buscar-ruta" placeholder="Buscar ruta o Pokémon..." oninput="filtrarRutas()"></div>
   <div id="rutas-container"></div>
 </div>
 
-<!-- ============ TAB: ESPECIAL ============ -->
 <div id="tab-especial" class="tab-content">
-  <div class="search-bar">
-    <input type="text" id="buscar-especial" placeholder="Buscar Pokémon o cómo obtenerlo..." oninput="filtrarEspecial()">
-  </div>
-  <p class="section-title">Pokémon de obtención especial <span class="count-badge" id="count-especial"></span></p>
+  <div class="search-bar"><input type="text" id="buscar-especial" placeholder="Buscar Pokémon o cómo obtenerlo..." oninput="filtrarEspecial()"></div>
+  <p class="section-title">Obtención especial <span class="count-badge" id="count-especial"></span></p>
   <div id="especial-container" class="especial-list"></div>
 </div>
 
-<!-- ============ TAB: MISIONES ============ -->
 <div id="tab-misiones" class="tab-content">
-  <p class="section-title">Misiones secundarias <span class="count-badge">21 misiones</span></p>
+  <p class="section-title">Misiones secundarias <span class="count-badge">21</span></p>
   <div id="misiones-container"></div>
 </div>
 
-<!-- ============ TAB: LEGENDARIOS ============ -->
 <div id="tab-legendarios" class="tab-content">
-  <p class="section-title">Pokémon Legendarios <span class="count-badge" id="count-leg"></span></p>
-  <div class="search-bar">
-    <input type="text" id="buscar-leg" placeholder="Buscar legendario o localización..." oninput="filtrarLeg()">
-  </div>
+  <div class="search-bar"><input type="text" id="buscar-leg" placeholder="Buscar legendario o localización..." oninput="filtrarLeg()"></div>
+  <p class="section-title">Legendarios <span class="count-badge" id="count-leg"></span></p>
   <div id="leg-container" class="especial-list"></div>
 </div>
 
-<!-- ============ TAB: FORMAS IBERIA ============ -->
 <div id="tab-formas" class="tab-content">
-  <p class="section-title">Formas Iberia <span class="count-badge">27 formas</span></p>
-  <p style="font-size:0.8rem;color:var(--texto-suave);margin-bottom:12px">Pokémon exclusivos de Iberia con tipos y localizaciones diferentes a los oficiales. Cada una representa una comunidad autónoma o región.</p>
-  <div class="search-bar">
-    <input type="text" id="buscar-formas" placeholder="Buscar Pokémon, tipo o localización..." oninput="filtrarFormas()">
-  </div>
+  <div class="search-bar"><input type="text" id="buscar-formas" placeholder="Buscar Pokémon, tipo o localización..." oninput="filtrarFormas()"></div>
+  <p class="section-title">Formas Iberia <span class="count-badge">27</span></p>
   <div id="formas-container" class="especial-list"></div>
 </div>
 
-<!-- ============ TAB: OBJETOS CLAVE ============ -->
 <div id="tab-objetos" class="tab-content">
-  <div class="search-bar">
-    <input type="text" id="buscar-obj" placeholder="Buscar objeto, localización o uso..." oninput="filtrarObjetos()">
-  </div>
+  <div class="search-bar"><input type="text" id="buscar-obj" placeholder="Buscar objeto, localización o uso..." oninput="filtrarObjetos()"></div>
   <div id="obj-container" class="especial-list"></div>
 </div>
 
-<!-- ============ TAB: POKÉDEX ============ -->
 <div id="tab-pokedex" class="tab-content">
-  <div class="search-bar" style="gap:8px;flex-wrap:wrap">
-    <input type="text" id="buscar-dex" placeholder="Buscar por nombre o número..." oninput="filtrarDex()" style="flex:1;min-width:140px">
-    <select id="filtro-tipo" onchange="filtrarDex()" style="background:var(--panel);border:1px solid var(--borde);border-radius:8px;padding:10px 10px;color:var(--texto);font-size:0.85rem;outline:none">
+  <div class="search-bar">
+    <input type="text" id="buscar-dex" placeholder="Nombre o número..." oninput="filtrarDex()">
+    <select id="filtro-tipo" onchange="filtrarDex()">
       <option value="">Todos los tipos</option>
-      <option>Agua</option><option>Bicho</option><option>Dragón</option>
-      <option>Eléctrico</option><option>Fantasma</option><option>Fuego</option>
-      <option>Hada</option><option>Hielo</option><option>Lucha</option>
-      <option>Normal</option><option>Planta</option><option>Psíquico</option>
-      <option>Roca</option><option>Siniestro</option><option>Tierra</option>
-      <option>Veneno</option><option>Volador</option><option>Acero</option>
+      <option>Agua</option><option>Acero</option><option>Bicho</option><option>Dragón</option>
+      <option>Eléctrico</option><option>Fantasma</option><option>Fuego</option><option>Hada</option>
+      <option>Hielo</option><option>Lucha</option><option>Normal</option><option>Planta</option>
+      <option>Psíquico</option><option>Roca</option><option>Siniestro</option><option>Tierra</option>
+      <option>Veneno</option><option>Volador</option>
     </select>
   </div>
-  <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
     <p id="dex-count" style="font-size:0.75rem;color:var(--texto-suave)">898 Pokémon · Gen 1-8</p>
     <button id="btn-cache" onclick="cachearSprites()" style="background:var(--verde);color:#fff;border:none;border-radius:6px;padding:6px 12px;font-size:0.75rem;font-weight:700;cursor:pointer">⬇️ Guardar fotos offline</button>
     <span id="cache-status" style="font-size:0.72rem;color:var(--texto-suave)"></span>
@@ -421,10 +140,10 @@ function cachearSprites() {
   <div id="dex-container" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:8px"></div>
 </div>
 
-<footer>Datos extraídos de pokemon-iberia.fandom.com · Versión 2.04 · Solo para uso offline personal</footer>
+<footer>Pokémon Iberia v2.04 · Gen 1-8 · Solo uso personal</footer>
 
 <script>
-// ===== DATOS: RUTAS =====
+
 const RUTAS = [
   { num: "002", nombre: "Albacete", step: 1, zonas: [
     { habitat: "Agua", pokes: [
@@ -1921,7 +1640,6 @@ const RUTAS = [
   ]},
 ];
 
-// ===== DATOS: ESPECIAL =====
 const ESPECIAL = [
   // ===== INICIALES =====
   { n: "Polekin (Inicial Planta)", como: "<strong>Inicio de la aventura</strong> — el Profesor Félix te ofrece elegir entre Polekin, Lugnis y Quisquite en su laboratorio de <strong>Albacete</strong>. Los tres están a nivel 5." },
@@ -1956,81 +1674,6 @@ const ESPECIAL = [
   { n: "Iniciales de Iberia (Polekin/Lugnis/Quisquite)", como: "Se elige uno al inicio de la aventura en <strong>Albacete</strong>." },
 ];
 
-
-function tipoSpan(tipo) {
-  return `<span class="tipo t-${tipo}">${tipo}</span>`;
-}
-
-function renderRutas() {
-  const container = document.getElementById('rutas-container');
-  container.innerHTML = RUTAS.map((r, i) => {
-    const zonasHTML = r.zonas.map(z => {
-      const rows = z.pokes.map(p =>
-        `<tr>
-          <td><strong>${p.n}</strong></td>
-          <td>${p.tipos.map(tipoSpan).join('')}</td>
-          <td class="niveles">${p.niveles}</td>
-          <td class="pct">${p.ratio}</td>
-        </tr>`
-      ).join('');
-      return `<div class="habitat-label">📍 ${z.habitat}</div>
-        <table>
-          <thead><tr><th>Pokémon</th><th>Tipo</th><th>Niveles</th><th>%</th></tr></thead>
-          <tbody>${rows}</tbody>
-        </table>`;
-    }).join('');
-    return `<div class="ruta-card" id="ruta-${i}">
-      <div class="ruta-header" onclick="toggleRuta(${i})">
-        <span class="ruta-num" title="Zona ${r.num}">${String(r.step).padStart(2,'0')}</span>
-        <span class="ruta-nombre">${r.nombre} <small style="color:var(--texto-suave);font-weight:400;font-size:0.75rem">#${r.num}</small></span>
-        <span class="ruta-toggle" id="tog-${i}">▼</span>
-      </div>
-      <div class="ruta-body" id="body-${i}">${zonasHTML}</div>
-    </div>`;
-  }).join('');
-}
-
-function toggleRuta(i) {
-  const body = document.getElementById('body-'+i);
-  const tog = document.getElementById('tog-'+i);
-  const open = body.classList.toggle('open');
-  tog.classList.toggle('open', open);
-}
-
-function filtrarRutas() {
-  const q = document.getElementById('buscar-ruta').value.toLowerCase();
-  RUTAS.forEach((r, i) => {
-    const card = document.getElementById('ruta-'+i);
-    const texto = (r.nombre + r.num + r.zonas.map(z => z.pokes.map(p => p.n).join(' ')).join(' ')).toLowerCase();
-    card.classList.toggle('hidden', q && !texto.includes(q));
-    if (q && texto.includes(q)) {
-      document.getElementById('body-'+i).classList.add('open');
-      document.getElementById('tog-'+i).classList.add('open');
-    }
-  });
-}
-
-function renderEspecial() {
-  const container = document.getElementById('especial-container');
-  document.getElementById('count-especial').textContent = ESPECIAL.length;
-  container.innerHTML = ESPECIAL.map((e, i) =>
-    `<div class="especial-item" id="esp-${i}">
-      <div class="especial-poke">⭐ ${e.n}</div>
-      <div class="especial-como">${e.como}</div>
-    </div>`
-  ).join('');
-}
-
-function filtrarEspecial() {
-  const q = document.getElementById('buscar-especial').value.toLowerCase();
-  ESPECIAL.forEach((e, i) => {
-    const card = document.getElementById('esp-'+i);
-    const txt = (e.n + ' ' + e.como).toLowerCase();
-    card.classList.toggle('hidden', q && !txt.includes(q));
-  });
-}
-
-// ===== DATOS: MISIONES =====
 const MISIONES = [
   {
     titulo: "Brigada de Desarrolladores", icono: "💻",
@@ -2292,46 +1935,6 @@ const MISIONES = [
   },
 ];
 
-function renderMisiones() {
-  const container = document.getElementById('misiones-container');
-  container.innerHTML = MISIONES.map((m, i) => {
-    const pasosHTML = m.pasos.map((p, j) =>
-      `<div style="display:flex;gap:8px;margin-bottom:6px">
-        <span style="background:var(--rojo);color:#fff;border-radius:50%;width:20px;height:20px;min-width:20px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800">${j+1}</span>
-        <span style="font-size:0.83rem;color:var(--texto-suave);line-height:1.5">${p}</span>
-      </div>`
-    ).join('');
-    return `<div class="mision-card">
-      <div class="mision-header" onclick="toggleMision(${i})">
-        <div class="mision-icon">${m.icono}</div>
-        <div class="mision-titulo">${m.titulo}</div>
-        <span class="ruta-toggle" id="mtog-${i}">▼</span>
-      </div>
-      <div class="mision-body" id="mbody-${i}">
-        <p style="margin-bottom:10px;font-size:0.83rem"><strong>📍 Inicio:</strong> ${m.inicio}</p>
-        <p style="margin-bottom:8px;font-weight:700;color:var(--texto);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.8px">Pasos:</p>
-        ${pasosHTML}
-        <div style="margin-top:10px"><span class='reward'>🎁 ${m.recompensa}</span></div>
-      </div>
-    </div>`;
-  }).join('');
-}
-
-function toggleMision(i) {
-  const body = document.getElementById('mbody-'+i);
-  const tog = document.getElementById('mtog-'+i);
-  const open = body.classList.toggle('open');
-  tog.classList.toggle('open', open);
-}
-
-function showTab(id, btn) {
-  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-'+id).classList.add('active');
-  if (btn) btn.classList.add('active');
-}
-
-// ===== DATOS: LEGENDARIOS =====
 const LEGENDARIOS = [
   { n: "Articuno", tipos: ["Hielo","Volador"], loc: "Cima de <strong>Sierra Nevada</strong>", req: "Obtener la Mano de Santa Teresa y hablar con Unamuno en Salamanca." },
   { n: "Zapdos", tipos: ["Eléctrico","Volador"], loc: "Cima de la <strong>Cueva de Amboto</strong>", req: "Obtener la Mano de Santa Teresa y hablar con Unamuno en Salamanca." },
@@ -2416,33 +2019,6 @@ const LEGENDARIOS = [
   { n: "Calyrex", tipos: ["Psíquico","Planta"], loc: "Ver wiki para localización exacta en Iberia", req: "Completar la trama de Franco. Se combina con Glastrier o Spectrier." },
 ];
 
-function renderLeg() {
-  const container = document.getElementById('leg-container');
-  document.getElementById('count-leg').textContent = LEGENDARIOS.length;
-  container.innerHTML = LEGENDARIOS.map((l, i) =>
-    `<div class="especial-item" id="leg-${i}">
-      <div style="min-width:130px">
-        <div style="font-weight:800;color:var(--amarillo);font-size:0.88rem">✨ ${l.n}</div>
-        <div style="margin-top:3px">${l.tipos.map(tipoSpan).join('')}</div>
-      </div>
-      <div style="font-size:0.83rem;line-height:1.6;color:var(--texto-suave)">
-        <div>📍 ${l.loc}</div>
-        <div style="margin-top:3px;color:var(--texto-suave)">⚠️ ${l.req}</div>
-      </div>
-    </div>`
-  ).join('');
-}
-
-function filtrarLeg() {
-  const q = document.getElementById('buscar-leg').value.toLowerCase();
-  LEGENDARIOS.forEach((l, i) => {
-    const card = document.getElementById('leg-'+i);
-    const txt = (l.n + ' ' + l.loc + ' ' + l.req + ' ' + l.tipos.join(' ')).toLowerCase();
-    card.classList.toggle('hidden', q && !txt.includes(q));
-  });
-}
-
-// ===== DATOS: FORMAS IBERIA =====
 const FORMAS = [
   // Iniciales de Iberia (originales)
   { n: "Polekin", base: "Original", tipos: ["Planta"], evo: "Inicial Planta. Elegir al inicio en Albacete.", loc: "Laboratorio del Profesor Félix (Albacete)" },
@@ -2476,33 +2052,6 @@ const FORMAS = [
   { n: "Rufflet Forma Iberia", base: "Rufflet", tipos: ["Roca","Volador"], evo: "Evoluciona a Braviary F.I. (nv.54).", loc: "Pinares de Rodeno (salvaje)" },
 ];
 
-function renderFormas() {
-  const container = document.getElementById('formas-container');
-  container.innerHTML = FORMAS.map((f, i) =>
-    `<div class="especial-item" id="forma-${i}">
-      <div style="min-width:160px">
-        <div style="font-weight:800;color:#a29bfe;font-size:0.88rem">🦎 ${f.n}</div>
-        <div style="font-size:0.72rem;color:var(--texto-suave);margin-top:2px">Base: <em>${f.base}</em></div>
-        <div style="margin-top:4px">${f.tipos.map(tipoSpan).join('')}</div>
-      </div>
-      <div style="font-size:0.83rem;line-height:1.6;color:var(--texto-suave)">
-        <div>📍 ${f.loc}</div>
-        <div style="margin-top:3px">🔄 ${f.evo}</div>
-      </div>
-    </div>`
-  ).join('');
-}
-
-function filtrarFormas() {
-  const q = document.getElementById('buscar-formas').value.toLowerCase();
-  FORMAS.forEach((f, i) => {
-    const card = document.getElementById('forma-'+i);
-    const txt = (f.n + ' ' + f.base + ' ' + f.tipos.join(' ') + ' ' + f.loc + ' ' + f.evo).toLowerCase();
-    card.classList.toggle('hidden', q && !txt.includes(q));
-  });
-}
-
-// ===== DATOS: OBJETOS CLAVE =====
 const OBJETOS = [
   // Para legendarios
   { cat: "🏆 Para Legendarios", n: "Mano de Santa Teresa", donde: "Se obtiene en <strong>Salamanca</strong> durante la trama principal.", uso: "Necesaria para acceder a Articuno (Sierra Nevada), Zapdos (Cueva Amboto) y Moltres (Sierra Guadarrama). Hablar con Unamuno en Salamanca después de tenerla." },
@@ -2542,43 +2091,6 @@ const OBJETOS = [
   { cat: "⚔️ Combate Especial", n: "Hacendado Ball", donde: "Tiendas específicas de Iberia.", uso: "Poké Ball exclusiva de Iberia con tasa de captura especial." },
 ];
 
-const OBJ_CATS = ["🏆 Para Legendarios","📋 Para Misiones","💎 Evolutivos Especiales","🗺️ Acceso a Zonas","⚔️ Combate Especial"];
-
-function renderObjetos() {
-  const container = document.getElementById('obj-container');
-  let html = '';
-  for (const cat of OBJ_CATS) {
-    const items = OBJETOS.filter(o => o.cat === cat);
-    html += `<p class="section-title" style="margin-top:16px">${cat} <span class="count-badge">${items.length}</span></p>`;
-    for (let i = 0; i < items.length; i++) {
-      const o = items[i];
-      const idx = OBJETOS.indexOf(o);
-      html += `<div class="especial-item" id="obj-${idx}">
-        <div style="min-width:160px">
-          <div style="font-weight:800;color:var(--amarillo);font-size:0.88rem">🎒 ${o.n}</div>
-        </div>
-        <div style="font-size:0.83rem;line-height:1.6;color:var(--texto-suave)">
-          <div>📍 <strong style="color:var(--texto)">Dónde:</strong> ${o.donde}</div>
-          <div style="margin-top:3px">✅ <strong style="color:var(--texto)">Uso:</strong> ${o.uso}</div>
-        </div>
-      </div>`;
-    }
-  }
-  container.innerHTML = html;
-}
-
-function filtrarObjetos() {
-  const q = document.getElementById('buscar-obj').value.toLowerCase();
-  OBJETOS.forEach((o, i) => {
-    const card = document.getElementById('obj-'+i);
-    if (!card) return;
-    const txt = (o.n + ' ' + o.donde + ' ' + o.uso + ' ' + o.cat).toLowerCase();
-    card.classList.toggle('hidden', q && !txt.includes(q));
-  });
-}
-
-
-// ===== DATOS: POKÉDEX =====
 const POKEDEX = [
   [1,"Bulbasaur",["Planta","Veneno"]],
   [2,"Ivysaur",["Planta","Veneno"]],
@@ -3480,47 +2992,119 @@ const POKEDEX = [
   [898,"Calyrex",["Psíquico","Planta"]],
 ];
 
-function renderDex(list) {
-  const container = document.getElementById('dex-container');
-  const SPRITE_BASE = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
-  container.innerHTML = list.map(([num, name, tipos]) => {
-    const tipos_html = tipos.map(t => `<span class="tipo t-${t}" style="font-size:0.55rem;padding:1px 4px">${t}</span>`).join('');
-    return `<div class="ruta-card" style="padding:8px;text-align:center;cursor:default">
-      <img 
-        src="${SPRITE_BASE}${num}.png"
-        loading="lazy"
-        width="56" height="56"
-        alt="${name}"
-        onerror="this.style.display='none'"
-        style="image-rendering:pixelated"
-      >
-      <div style="font-size:0.62rem;color:var(--texto-suave);margin:2px 0">#${String(num).padStart(3,'0')}</div>
-      <div style="font-size:0.75rem;font-weight:700;color:var(--texto);margin-bottom:3px;line-height:1.2">${name}</div>
-      <div>${tipos_html}</div>
-    </div>`;
+
+function tipoSpan(t){return `<span class="tipo t-${t}">${t}</span>`;}
+
+function showTab(id,btn){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if(btn) btn.classList.add('active');
+}
+
+function renderRutas(){
+  const c=document.getElementById('rutas-container');
+  c.innerHTML=RUTAS.map((r,i)=>{
+    const z=r.zonas.map(z=>{
+      const rows=z.pokes.map(p=>`<tr><td><strong>${p.n}</strong></td><td>${p.tipos.map(tipoSpan).join('')}</td><td class="niveles">${p.niveles}</td><td class="pct">${p.ratio}</td></tr>`).join('');
+      return `<div class="habitat-label">📍 ${z.habitat}</div><table><thead><tr><th>Pokémon</th><th>Tipo</th><th>Niveles</th><th>%</th></tr></thead><tbody>${rows}</tbody></table>`;
+    }).join('');
+    return `<div class="ruta-card" id="rc${i}"><div class="ruta-header" onclick="toggleRuta(${i})"><span class="ruta-num" title="#${r.num}">${String(r.step).padStart(2,'0')}</span><span class="ruta-nombre">${r.nombre} <small style="color:var(--texto-suave);font-size:0.75rem">#${r.num}</small></span><span class="ruta-toggle" id="rt${i}">▼</span></div><div class="ruta-body" id="rb${i}">${z}</div></div>`;
   }).join('');
-  document.getElementById('dex-count').textContent = list.length + ' Pokémon mostrados';
 }
-
-function filtrarDex() {
-  const q = document.getElementById('buscar-dex').value.toLowerCase().trim();
-  const tipo = document.getElementById('filtro-tipo').value;
-  const filtered = POKEDEX.filter(([num, name, tipos]) => {
-    const matchQ = !q || name.toLowerCase().includes(q) || String(num).includes(q);
-    const matchT = !tipo || tipos.includes(tipo);
-    return matchQ && matchT;
+function toggleRuta(i){
+  const b=document.getElementById('rb'+i),t=document.getElementById('rt'+i);
+  t.classList.toggle('open',b.classList.toggle('open'));
+}
+function filtrarRutas(){
+  const q=document.getElementById('buscar-ruta').value.toLowerCase();
+  RUTAS.forEach((r,i)=>{
+    const card=document.getElementById('rc'+i);
+    const txt=(r.nombre+r.num+r.zonas.map(z=>z.pokes.map(p=>p.n).join(' ')).join(' ')).toLowerCase();
+    const show=!q||txt.includes(q);
+    card.classList.toggle('hidden',!show);
+    if(show&&q){document.getElementById('rb'+i).classList.add('open');document.getElementById('rt'+i).classList.add('open');}
   });
-  renderDex(filtered);
 }
 
-// Init
-renderRutas();
-renderEspecial();
-renderMisiones();
-renderLeg();
-renderFormas();
-renderObjetos();
-renderDex(POKEDEX);
+function renderEspecial(){
+  document.getElementById('count-especial').textContent=ESPECIAL.length;
+  document.getElementById('especial-container').innerHTML=ESPECIAL.map((e,i)=>`<div class="especial-item" id="esp${i}"><div class="especial-poke">⭐ ${e.n}</div><div class="especial-como">${e.como}</div></div>`).join('');
+}
+function filtrarEspecial(){
+  const q=document.getElementById('buscar-especial').value.toLowerCase();
+  ESPECIAL.forEach((e,i)=>{const c=document.getElementById('esp'+i);c.classList.toggle('hidden',!!q&&!(e.n+e.como).toLowerCase().includes(q));});
+}
+
+function renderMisiones(){
+  document.getElementById('misiones-container').innerHTML=MISIONES.map((m,i)=>{
+    const pasos=m.pasos.map((p,j)=>`<div style="display:flex;gap:8px;margin-bottom:6px"><span style="background:var(--rojo);color:#fff;border-radius:50%;width:20px;height:20px;min-width:20px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800">${j+1}</span><span style="font-size:0.83rem;color:var(--texto-suave);line-height:1.5">${p}</span></div>`).join('');
+    return `<div class="mision-card"><div class="mision-header" onclick="toggleMision(${i})"><div class="mision-icon">${m.icono}</div><div class="mision-titulo">${m.titulo}</div><span class="ruta-toggle" id="mt${i}">▼</span></div><div class="mision-body" id="mb${i}"><p style="margin-bottom:10px;font-size:0.83rem"><strong>📍 Inicio:</strong> ${m.inicio}</p><p style="margin-bottom:8px;font-weight:700;color:var(--texto);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.8px">Pasos:</p>${pasos}<div style="margin-top:10px"><span class="reward">🎁 ${m.recompensa}</span></div></div></div>`;
+  }).join('');
+}
+function toggleMision(i){
+  const b=document.getElementById('mb'+i),t=document.getElementById('mt'+i);
+  t.classList.toggle('open',b.classList.toggle('open'));
+}
+
+function renderLeg(){
+  document.getElementById('count-leg').textContent=LEGENDARIOS.length;
+  document.getElementById('leg-container').innerHTML=LEGENDARIOS.map((l,i)=>`<div class="especial-item" id="leg${i}"><div style="min-width:130px"><div style="font-weight:800;color:var(--amarillo);font-size:0.88rem">✨ ${l.n}</div><div style="margin-top:3px">${l.tipos.map(tipoSpan).join('')}</div></div><div style="font-size:0.83rem;line-height:1.6;color:var(--texto-suave)"><div>📍 ${l.loc}</div><div style="margin-top:3px">⚠️ ${l.req}</div></div></div>`).join('');
+}
+function filtrarLeg(){
+  const q=document.getElementById('buscar-leg').value.toLowerCase();
+  LEGENDARIOS.forEach((l,i)=>{const c=document.getElementById('leg'+i);c.classList.toggle('hidden',!!q&&!(l.n+l.loc+l.req+l.tipos.join(' ')).toLowerCase().includes(q));});
+}
+
+function renderFormas(){
+  document.getElementById('formas-container').innerHTML=FORMAS.map((f,i)=>`<div class="especial-item" id="fo${i}"><div style="min-width:160px"><div style="font-weight:800;color:#a29bfe;font-size:0.88rem">🦎 ${f.n}</div><div style="font-size:0.72rem;color:var(--texto-suave);margin-top:2px">Base: <em>${f.base}</em></div><div style="margin-top:4px">${f.tipos.map(tipoSpan).join('')}</div></div><div style="font-size:0.83rem;line-height:1.6;color:var(--texto-suave)"><div>📍 ${f.loc}</div><div style="margin-top:3px">🔄 ${f.evo}</div></div></div>`).join('');
+}
+function filtrarFormas(){
+  const q=document.getElementById('buscar-formas').value.toLowerCase();
+  FORMAS.forEach((f,i)=>{const c=document.getElementById('fo'+i);c.classList.toggle('hidden',!!q&&!(f.n+f.base+f.tipos.join(' ')+f.loc+f.evo).toLowerCase().includes(q));});
+}
+
+const OBJ_CATS=["🏆 Para Legendarios","📋 Para Misiones","💎 Evolutivos Especiales","🗺️ Acceso a Zonas","⚔️ Combate Especial"];
+function renderObjetos(){
+  let h='';
+  for(const cat of OBJ_CATS){
+    const items=OBJETOS.filter(o=>o.cat===cat);
+    h+=`<p class="section-title" style="margin-top:16px">${cat} <span class="count-badge">${items.length}</span></p>`;
+    items.forEach(o=>{
+      const idx=OBJETOS.indexOf(o);
+      h+=`<div class="especial-item" id="obj${idx}"><div style="min-width:160px"><div style="font-weight:800;color:var(--amarillo);font-size:0.88rem">🎒 ${o.n}</div></div><div style="font-size:0.83rem;line-height:1.6;color:var(--texto-suave)"><div>📍 <strong style="color:var(--texto)">Dónde:</strong> ${o.donde}</div><div style="margin-top:3px">✅ <strong style="color:var(--texto)">Uso:</strong> ${o.uso}</div></div></div>`;
+    });
+  }
+  document.getElementById('obj-container').innerHTML=h;
+}
+function filtrarObjetos(){
+  const q=document.getElementById('buscar-obj').value.toLowerCase();
+  OBJETOS.forEach((o,i)=>{const c=document.getElementById('obj'+i);if(c)c.classList.toggle('hidden',!!q&&!(o.n+o.donde+o.uso+o.cat).toLowerCase().includes(q));});
+}
+
+function renderDex(list){
+  const B='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
+  document.getElementById('dex-container').innerHTML=list.map(([num,name,tipos])=>`<div class="ruta-card" style="padding:8px;text-align:center"><img src="${B}${num}.png" loading="lazy" width="56" height="56" alt="${name}" onerror="this.style.display='none'" style="image-rendering:pixelated"><div style="font-size:0.62rem;color:var(--texto-suave);margin:2px 0">#${String(num).padStart(3,'0')}</div><div style="font-size:0.75rem;font-weight:700;line-height:1.2;margin-bottom:3px">${name}</div><div>${tipos.map(tipoSpan).join('')}</div></div>`).join('');
+  document.getElementById('dex-count').textContent=list.length+' Pokémon';
+}
+function filtrarDex(){
+  const q=document.getElementById('buscar-dex').value.toLowerCase().trim();
+  const tipo=document.getElementById('filtro-tipo').value;
+  renderDex(POKEDEX.filter(([num,name,tipos])=>(!q||name.toLowerCase().includes(q)||String(num).includes(q))&&(!tipo||tipos.includes(tipo))));
+}
+
+function cachearSprites(){
+  if(!('serviceWorker' in navigator)){document.getElementById('cache-status').textContent='⚠️ No disponible';return;}
+  document.getElementById('btn-cache').disabled=true;
+  document.getElementById('cache-status').textContent='Descargando...';
+  navigator.serviceWorker.ready.then(r=>r.active.postMessage('precache-sprites'));
+  navigator.serviceWorker.addEventListener('message',e=>{
+    if(e.data.type==='sprite-progress') document.getElementById('cache-status').textContent=`${e.data.done}/${e.data.total}`;
+    else if(e.data.type==='sprite-done'){document.getElementById('cache-status').textContent='✅ Listo offline';document.getElementById('btn-cache').disabled=false;}
+  });
+}
+
+renderRutas();renderEspecial();renderMisiones();renderLeg();renderFormas();renderObjetos();renderDex(POKEDEX);
 </script>
 </body>
 </html>
