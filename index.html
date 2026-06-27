@@ -340,13 +340,13 @@ function cachearSprites() {
 </header>
 
 <div class="tabs">
-  <button class="tab-btn active" onclick="showTab('rutas')">🗺️ Pokémon por Ruta</button>
-  <button class="tab-btn" onclick="showTab('especial')">⭐ Obtención Especial</button>
-  <button class="tab-btn" onclick="showTab('misiones')">📋 Misiones Secundarias</button>
-  <button class="tab-btn" onclick="showTab('legendarios')">✨ Legendarios</button>
-  <button class="tab-btn" onclick="showTab('formas')">🦎 Formas Iberia</button>
-  <button class="tab-btn" onclick="showTab('objetos')">🎒 Objetos Clave</button>
-  <button class="tab-btn" onclick="showTab('pokedex')">📖 Pokédex</button>
+  <button class="tab-btn active" onclick="showTab('rutas', this)">🗺️ Pokémon por Ruta</button>
+  <button class="tab-btn" onclick="showTab('especial', this)">⭐ Obtención Especial</button>
+  <button class="tab-btn" onclick="showTab('misiones', this)">📋 Misiones Secundarias</button>
+  <button class="tab-btn" onclick="showTab('legendarios', this)">✨ Legendarios</button>
+  <button class="tab-btn" onclick="showTab('formas', this)">🦎 Formas Iberia</button>
+  <button class="tab-btn" onclick="showTab('objetos', this)">🎒 Objetos Clave</button>
+  <button class="tab-btn" onclick="showTab('pokedex', this)">📖 Pokédex</button>
 </div>
 
 <!-- ============ TAB: RUTAS ============ -->
@@ -1956,6 +1956,80 @@ const ESPECIAL = [
   { n: "Iniciales de Iberia (Polekin/Lugnis/Quisquite)", como: "Se elige uno al inicio de la aventura en <strong>Albacete</strong>." },
 ];
 
+
+function tipoSpan(tipo) {
+  return `<span class="tipo t-${tipo}">${tipo}</span>`;
+}
+
+function renderRutas() {
+  const container = document.getElementById('rutas-container');
+  container.innerHTML = RUTAS.map((r, i) => {
+    const zonasHTML = r.zonas.map(z => {
+      const rows = z.pokes.map(p =>
+        `<tr>
+          <td><strong>${p.n}</strong></td>
+          <td>${p.tipos.map(tipoSpan).join('')}</td>
+          <td class="niveles">${p.niveles}</td>
+          <td class="pct">${p.ratio}</td>
+        </tr>`
+      ).join('');
+      return `<div class="habitat-label">📍 ${z.habitat}</div>
+        <table>
+          <thead><tr><th>Pokémon</th><th>Tipo</th><th>Niveles</th><th>%</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>`;
+    }).join('');
+    return `<div class="ruta-card" id="ruta-${i}">
+      <div class="ruta-header" onclick="toggleRuta(${i})">
+        <span class="ruta-num" title="Zona ${r.num}">${String(r.step).padStart(2,'0')}</span>
+        <span class="ruta-nombre">${r.nombre} <small style="color:var(--texto-suave);font-weight:400;font-size:0.75rem">#${r.num}</small></span>
+        <span class="ruta-toggle" id="tog-${i}">▼</span>
+      </div>
+      <div class="ruta-body" id="body-${i}">${zonasHTML}</div>
+    </div>`;
+  }).join('');
+}
+
+function toggleRuta(i) {
+  const body = document.getElementById('body-'+i);
+  const tog = document.getElementById('tog-'+i);
+  const open = body.classList.toggle('open');
+  tog.classList.toggle('open', open);
+}
+
+function filtrarRutas() {
+  const q = document.getElementById('buscar-ruta').value.toLowerCase();
+  RUTAS.forEach((r, i) => {
+    const card = document.getElementById('ruta-'+i);
+    const texto = (r.nombre + r.num + r.zonas.map(z => z.pokes.map(p => p.n).join(' ')).join(' ')).toLowerCase();
+    card.classList.toggle('hidden', q && !texto.includes(q));
+    if (q && texto.includes(q)) {
+      document.getElementById('body-'+i).classList.add('open');
+      document.getElementById('tog-'+i).classList.add('open');
+    }
+  });
+}
+
+function renderEspecial() {
+  const container = document.getElementById('especial-container');
+  document.getElementById('count-especial').textContent = ESPECIAL.length;
+  container.innerHTML = ESPECIAL.map((e, i) =>
+    `<div class="especial-item" id="esp-${i}">
+      <div class="especial-poke">⭐ ${e.n}</div>
+      <div class="especial-como">${e.como}</div>
+    </div>`
+  ).join('');
+}
+
+function filtrarEspecial() {
+  const q = document.getElementById('buscar-especial').value.toLowerCase();
+  ESPECIAL.forEach((e, i) => {
+    const card = document.getElementById('esp-'+i);
+    const txt = (e.n + ' ' + e.como).toLowerCase();
+    card.classList.toggle('hidden', q && !txt.includes(q));
+  });
+}
+
 // ===== DATOS: MISIONES =====
 const MISIONES = [
   {
@@ -2250,11 +2324,11 @@ function toggleMision(i) {
   tog.classList.toggle('open', open);
 }
 
-function showTab(id) {
+function showTab(id, btn) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-'+id).classList.add('active');
-  event.target.classList.add('active');
+  if (btn) btn.classList.add('active');
 }
 
 // ===== DATOS: LEGENDARIOS =====
