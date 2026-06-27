@@ -1,0 +1,17 @@
+{
+  "name": "Pokémon Iberia — Guía",
+  "short_name": "PK Iberia",
+  "description": "Guía offline completa de Pokémon Iberia v2.04",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#c0392b",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/175.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ]
+}
