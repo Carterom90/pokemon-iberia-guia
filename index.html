@@ -1642,81 +1642,84 @@ const RUTAS = [
 
 const ESPECIAL = [
   // ===== INICIALES =====
-  { n: "Polekin (Inicial Planta)", como: "<strong>Inicio de la aventura</strong> — el Profesor Félix te ofrece elegir entre Polekin, Lugnis y Quisquite en su laboratorio de <strong>Albacete</strong>. Los tres están a nivel 5." },
-  { n: "Lugnis (Inicial Fuego)", como: "<strong>Inicio de la aventura</strong> — elige en el laboratorio del Profesor Félix en <strong>Albacete</strong>." },
-  { n: "Quisquite (Inicial Agua)", como: "<strong>Inicio de la aventura</strong> — elige en el laboratorio del Profesor Félix en <strong>Albacete</strong>." },
-  { n: "Segundo inicial (el que no elegiste)", como: "<strong>Post-Liga</strong> — visita el laboratorio del Profesor Félix en Albacete. Félix te desafía a un combate. Al derrotarle, te entrega el inicial que ni tú ni Sofía eligieron al inicio, <strong>junto a su megapiedra</strong>." },
-  { n: "Cría del inicial de Sofía", como: "<strong>Post-Liga</strong> — tras derrotar al Profesor Félix, ve a la casa de Sofía en Albacete. Ella te desafía a un combate. Al derrotarla, te entrega una <strong>cría del inicial que ella escogió</strong> al principio, junto a su megapiedra. <em>Así puedes tener los 3 iniciales de Iberia.</em>" },
-  { n: "Bulbasaur", como: "Participa en los <strong>encierros de Sanfermines en Pamplona</strong>. La primera vez que llegues al final del circuito, recibes un Bulbasaur." },
-  { n: "Charmander", como: "Entrega tabaco a <strong>5 personajes</strong> encargados por el dueño del puesto de tabaco de <strong>Gibraltar</strong>. Al completar la tarea, el dueño te regala a Charmander." },
-  { n: "Treecko", como: "Captura el <strong>Unown Ñ</strong> en la sala secreta del tercer castillo leonés (Ruta Leonesa Sur) y muéstraselo a <strong>Iker Jiménez</strong>. Iker te da Treecko a cambio." },
-  { n: "Grookey", como: "<strong>David Broncano</strong> en Madrid te lo entrega al reunir la <strong>mitad de los famosetes</strong> de la Búsqueda de Famosos." },
-  { n: "Scorbunny", como: "<strong>Sergio Ramos</strong> en la Ruta Madrileña te entrega un huevo al derrotarle. Requiere haber completado la trama de Franco." },
-  { n: "Sobble", como: "<strong>Torrente</strong> en el casino de Granada te lo entrega al darle dinero para saldar su deuda. Requiere trama de Franco completada." },
-  { n: "Rotom", como: "Interior de la torre abandonada del <strong>Aeropuerto de Castellón</strong> (encuentro único)." },
+  { n: "Polekin (Inicial Planta)", como: "<strong>Inicio de la aventura<\/strong> — el Profesor Félix te ofrece elegir entre Polekin, Lugnis y Quisquite en su laboratorio de <strong>Albacete<\/strong>. Los tres están a nivel 5." },
+  { n: "Lugnis (Inicial Fuego)", como: "<strong>Inicio de la aventura<\/strong> — elige en el laboratorio del Profesor Félix en <strong>Albacete<\/strong>." },
+  { n: "Quisquite (Inicial Agua)", como: "<strong>Inicio de la aventura<\/strong> — elige en el laboratorio del Profesor Félix en <strong>Albacete<\/strong>." },
+  { n: "Segundo inicial (el que no elegiste)", como: "<strong>Post-Liga<\/strong> — visita el laboratorio del Profesor Félix en Albacete. Félix te desafía a un combate. Al derrotarle, te entrega el inicial que ni tú ni Sofía eligieron al inicio, <strong>junto a su megapiedra<\/strong>." },
+  { n: "Cría del inicial de Sofía", como: "<strong>Post-Liga<\/strong> — tras derrotar al Profesor Félix, ve a la casa de Sofía en Albacete. Ella te desafía a un combate. Al derrotarla, te entrega una <strong>cría del inicial que ella escogió<\/strong> al principio, junto a su megapiedra. <em>Así puedes tener los 3 iniciales de Iberia.<\/em>" },
+  { n: "Bulbasaur", como: "Participa en los <strong>encierros de Sanfermines en Pamplona<\/strong>. La primera vez que llegues al final del circuito, recibes un Bulbasaur." },
+  { n: "Charmander", como: "Entrega tabaco a <strong>5 personajes<\/strong> encargados por el dueño del puesto de tabaco de <strong>Gibraltar<\/strong>. Al completar la tarea, el dueño te regala a Charmander." },
+  { n: "Treecko", como: "Captura el <strong>Unown Ñ<\/strong> en la sala secreta del tercer castillo leonés (Ruta Leonesa Sur) y muéstraselo a <strong>Iker Jiménez<\/strong>. Iker te da Treecko a cambio." },
+  { n: "Grookey", como: "<strong>David Broncano<\/strong> en Madrid te lo entrega al reunir la <strong>mitad de los famosetes<\/strong> de la Búsqueda de Famosos." },
+  { n: "Scorbunny", como: "<strong>Sergio Ramos<\/strong> en la Ruta Madrileña te entrega un huevo al derrotarle. Requiere haber completado la trama de Franco." },
+  { n: "Sobble", como: "<strong>Torrente<\/strong> en el casino de Granada te lo entrega al darle dinero para saldar su deuda. Requiere trama de Franco completada." },
+  { n: "Rotom", como: "Interior de la torre abandonada del <strong>Aeropuerto de Castellón<\/strong> (encuentro único)." },
   { n: "Munchlax", como: "Planta superior de un edificio (encuentro único, buscar en la wiki la ubicación exacta)." },
-  { n: "Gligar / Noibat", como: "Elegir uno al inicio. El otro se obtiene hablando con el <strong>forofo tras completar la Liga</strong> (v2.04)." },
-  { n: "Lapras", como: "Regalo de un científico del <strong>Oceanogràfic</strong> en forma de huevo, tras obtener la Medalla Pintxo." },
-  { n: "Smeargle", como: "Regalo de <strong>Pintora Cecilia</strong> tras derrotarla en Zaragoza." },
-  { n: "Larvesta", como: "Entregado por <strong>Cristiano</strong> tras derrotarle en el Gimnasio de Lisboa." },
-  { n: "Honedge", como: "Un gitano en la <strong>Armería de la Ruta Toledana</strong> lo vende por 10.000 Pokéuros." },
-  { n: "Eevee", como: "<strong>Oficina Forocochera (Granada)</strong>, última planta. Hay que resolver un código de 3 dígitos siguiendo las pistas de los desarrolladores." },
-  { n: "Tauros", como: "<strong>Plaza de Las Ventas (Madrid)</strong>. Solo si decides enfrentarte a los toreros." },
-  { n: "Grookey", como: "<strong>David Broncano</strong> en Madrid, tras reunir a la mitad de los famosetes." },
-  { n: "Bagon", como: "<strong>Pujol</strong> tras derrotarle en combate en la Casa de la Vall en Andorra." },
-  { n: "Scorbunny", como: "<strong>Sergio Ramos</strong> (en su casa, Ruta Madrileña), entregado como huevo tras derrotarle. Requiere haber completado la trama de Franco." },
-  { n: "Sobble", como: "<strong>Torrente</strong> en el casino de Granada, al darle dinero para saldar su deuda. Requiere trama de Franco completada." },
-  { n: "Klefki", como: "Trabajadora del <strong>hotel de Santa Cruz de Tenerife</strong> en forma de huevo, tras encontrar a su Klefki perdido. Requiere pagar el hotel." },
-  { n: "Charmander", como: "<strong>Vendedor de tabaco de Gibraltar</strong>, tras entregar todos los paquetes de tabaco (misión Tabaco)." },
-  { n: "Toxel", como: "<strong>Robe Iniesta</strong> en Mérida, tras derrotarle." },
-  { n: "Castform", como: "Una científica en una casa de <strong>Santiago de Compostela</strong>." },
+  { n: "Gligar / Noibat", como: "Elegir uno al inicio. El otro se obtiene hablando con el <strong>forofo tras completar la Liga<\/strong> (v2.04)." },
+  { n: "Lapras", como: "Regalo de un científico del <strong>Oceanogràfic<\/strong> en forma de huevo, tras obtener la Medalla Pintxo." },
+  { n: "Smeargle", como: "Regalo de <strong>Pintora Cecilia<\/strong> tras derrotarla en Zaragoza." },
+  { n: "Larvesta", como: "Entregado por <strong>Cristiano<\/strong> tras derrotarle en el Gimnasio de Lisboa." },
+  { n: "Honedge", como: "Un gitano en la <strong>Armería de la Ruta Toledana<\/strong> lo vende por 10.000 Pokéuros." },
+  { n: "Eevee", como: "<strong>Oficina Forocochera (Granada)<\/strong>, última planta. Hay que resolver un código de 3 dígitos siguiendo las pistas de los desarrolladores." },
+  { n: "Tauros", como: "<strong>Plaza de Las Ventas (Madrid)<\/strong>. Solo si decides enfrentarte a los toreros." },
+  { n: "Grookey", como: "<strong>David Broncano<\/strong> en Madrid, tras reunir a la mitad de los famosetes." },
+  { n: "Bagon", como: "<strong>Pujol<\/strong> tras derrotarle en combate en la Casa de la Vall en Andorra." },
+  { n: "Scorbunny", como: "<strong>Sergio Ramos<\/strong> (en su casa, Ruta Madrileña), entregado como huevo tras derrotarle. Requiere haber completado la trama de Franco." },
+  { n: "Sobble", como: "<strong>Torrente<\/strong> en el casino de Granada, al darle dinero para saldar su deuda. Requiere trama de Franco completada." },
+  { n: "Klefki", como: "Trabajadora del <strong>hotel de Santa Cruz de Tenerife<\/strong> en forma de huevo, tras encontrar a su Klefki perdido. Requiere pagar el hotel." },
+  { n: "Charmander", como: "<strong>Vendedor de tabaco de Gibraltar<\/strong>, tras entregar todos los paquetes de tabaco (misión Tabaco)." },
+  { n: "Toxel", como: "<strong>Robe Iniesta<\/strong> en Mérida, tras derrotarle." },
+  { n: "Castform", como: "Una científica en una casa de <strong>Santiago de Compostela<\/strong>." },
   { n: "Ludicolo Forma Iberia", como: "Pokémon exclusivo de la región (ver wiki para detalles)." },
-  { n: "Iniciales de Iberia (Polekin/Lugnis/Quisquite)", como: "Se elige uno al inicio de la aventura en <strong>Albacete</strong>." },
+  { n: "Iniciales de Iberia (Polekin/Lugnis/Quisquite)", como: "Se elige uno al inicio de la aventura en <strong>Albacete<\/strong>." },
 ];
 
 const MISIONES = [
   {
     titulo: "Brigada de Desarrolladores", icono: "💻",
-    inicio: "<strong>Oficina Forocochera, Granada</strong> — planta 1, habla con la empleada preocupada.",
+    inicio: "<strong>Oficina Forocochera, Granada<\/strong> — planta 1, habla con la empleada preocupada.",
     pasos: [
-      "Ve a la <strong>Oficina Forocochera</strong> en el centro de Granada (junto al Mercadona). Habla con la empleada de la planta 1 para iniciar la misión.",
-      "Derrota a los desarrolladores repartidos por toda Iberia — al vencerlos regresan a la oficina y dan <strong>pistas sobre la contraseña de 3 dígitos</strong>. Localización de cada uno:<br><br><strong>Miembros confirmados:</strong><ul style='margin:6px 0 6px 16px;line-height:1.8'><li><strong>Pepe Vega</strong> — <em>Oficina Forocochera (Granada), planta 1</em>. Es el primero.</li><li><strong>Barociraptor</strong> — <em>Sevilla</em>, junto a la Giralda (necesitas la Medalla Duende).</li><li><strong>Mov</strong> — <em>Ruta Levante</em>, dentro de la Paellería.</li><li><strong>Rockefowler</strong> — <em>Ruta Riojana</em>, interior de la Bodega Las Gaunas.</li><li><strong>Carapiedra</strong> — <em>Ibiza</em>, en la casa del investigador de civilizaciones baleares.</li><li><strong>Alex</strong> — <em>Torre de Hércules</em> (al norte de Santiago de Compostela).</li><li><strong>Raúl</strong> — <em>Madrid</em>, zona norte del Parque del Retiro <em>(solo aparece post-Franco)</em>.</li><li>Miembro en <em>Valencia (Oceanogràfic)</em> — nombre sin confirmar en wiki.</li><li>Miembro en <em>Ruta Catalana</em> — aparece tras la inundación.</li><li>Miembro en <em>Bilbao / Ruta Vasca</em> — nombre sin confirmar en wiki.</li></ul>",
-      "Tras derrotar a varios brigadistas y que regresen a la oficina, algunos darán pistas. La <strong>contraseña es de 3 dígitos</strong> y proviene de un hilo de Forocoches. Según fuentes de la comunidad, la contraseña es <strong>288</strong>.",
-      "Con la contraseña, habla con el empleado que bloquea la subida a la <strong>planta 3</strong> e introdúcela.",
-      "En la planta 3 recoge el <strong>Eevee nv.20</strong>.",
-      "<em>Post-Franco + todos los brigadistas reunidos:</em> <strong>Eric</strong> (jefe del juego) aparece en la <strong>planta 2</strong>. Derrótale para la <strong>Master Ball</strong>. ⚠️ Si combatiste contra algún Forocochero en versiones anteriores a la 1.0, Eric puede no aparecer.",
+      "Ve a la <strong>Oficina Forocochera<\/strong> en el centro de Granada (junto al Mercadona). Habla con la empleada de la planta 1 para iniciar la misión.",
+      "Derrota a los desarrolladores repartidos por toda Iberia — al vencerlos regresan a la oficina y dan <strong>pistas sobre la contraseña de 3 dígitos<\/strong>. Localización de cada uno:<br><br><strong>Miembros confirmados:<\/strong><ul style='margin:6px 0 6px 16px;line-height:1.8'><li><strong>Pepe Vega<\/strong> — <em>Oficina Forocochera (Granada), planta 1<\/em>. Es el primero.<\/li><li><strong>Barociraptor<\/strong> — <em>Sevilla<\/em>, junto a la Giralda (necesitas la Medalla Duende).<\/li><li><strong>Mov<\/strong> — <em>Ruta Levante<\/em>, dentro de la Paellería.<\/li><li><strong>Rockefowler<\/strong> — <em>Ruta Riojana<\/em>, interior de la Bodega Las Gaunas.<\/li><li><strong>Carapiedra<\/strong> — <em>Ibiza<\/em>, en la casa del investigador de civilizaciones baleares.<\/li><li><strong>Alex<\/strong> — <em>Torre de Hércules<\/em> (al norte de Santiago de Compostela).<\/li><li><strong>Raúl<\/strong> — <em>Madrid<\/em>, zona norte del Parque del Retiro <em>(solo aparece post-Franco)<\/em>.<\/li><li>Miembro en <em>Valencia (Oceanogràfic)<\/em> — nombre sin confirmar en wiki.<\/li><li>Miembro en <em>Ruta Catalana<\/em> — aparece tras la inundación.<\/li><li>Miembro en <em>Bilbao / Ruta Vasca<\/em> — nombre sin confirmar en wiki.<\/li><\/ul>",
+      "Tras derrotar a varios brigadistas y que regresen a la oficina, algunos darán pistas. La <strong>contraseña es de 3 dígitos<\/strong> y proviene de un hilo de Forocoches. Según fuentes de la comunidad, la contraseña es <strong>288<\/strong>.",
+      "Con la contraseña, habla con el empleado que bloquea la subida a la <strong>planta 3<\/strong> e introdúcela.",
+      "En la planta 3 recoge el <strong>Eevee nv.20<\/strong>.",
+      "<em>Post-Franco + todos los brigadistas reunidos:<\/em> <strong>Eric<\/strong> (jefe del juego) aparece en la <strong>planta 2<\/strong>. Derrótale para la <strong>Master Ball<\/strong>. ⚠️ Si combatiste contra algún Forocochero en versiones anteriores a la 1.0, Eric puede no aparecer.",
     ],
     recompensa: "Eevee nv.20 · Master Ball (post-Franco, derrotando a Eric)"
-    inicio: "<strong>Oficina Forocochera, Granada</strong> — visítala y habla con el Internauta de la planta 1.",
+  },
+  {
+    titulo: "Brigada de Desarrolladores", icono: "💻",
+    inicio: "<strong>Oficina Forocochera, Granada<\/strong> — visítala y habla con el Internauta de la planta 1.",
     pasos: [
-      "Ve a la Oficina Forocochera en <strong>Granada</strong> y habla con el Internauta. Te explica que los desarrolladores han abandonado el edificio.",
-      "Derrota a <strong>Pepe Vega</strong> (primer desarrollador) que está también en Granada. Vuelve a la oficina.",
-      "A medida que avanzas por Iberia, encontrarás más miembros de la Brigada en distintas ciudades: en <strong>Ruta Manchega, Valencia (Oceanogràfic), Ibiza (discoteca Pachá), Ruta Catalana, Zaragoza, Bilbao, Torre de Hércules (Alex), Ruta Castellana</strong> y otras. Derrótalos a todos.",
-      "Cada desarrollador derrotado vuelve a la oficina y da <strong>pistas sobre la contraseña de 3 dígitos</strong> que bloquea la planta 3.",
-      "Con las pistas, descifra el código, habla con el Cuñao de la planta 2 y sube a la <strong>planta 3</strong>.",
-      "Recoge el <strong>Eevee nv.20</strong>.",
-      "<em>Post-Liga:</em> con todos los desarrolladores reunidos, aparece <strong>Eric</strong> (jefe del juego) en la oficina. Derrótale para obtener la <strong>Master Ball</strong>.",
+      "Ve a la Oficina Forocochera en <strong>Granada<\/strong> y habla con el Internauta. Te explica que los desarrolladores han abandonado el edificio.",
+      "Derrota a <strong>Pepe Vega<\/strong> (primer desarrollador) que está también en Granada. Vuelve a la oficina.",
+      "A medida que avanzas por Iberia, encontrarás más miembros de la Brigada en distintas ciudades: en <strong>Ruta Manchega, Valencia (Oceanogràfic), Ibiza (discoteca Pachá), Ruta Catalana, Zaragoza, Bilbao, Torre de Hércules (Alex), Ruta Castellana<\/strong> y otras. Derrótalos a todos.",
+      "Cada desarrollador derrotado vuelve a la oficina y da <strong>pistas sobre la contraseña de 3 dígitos<\/strong> que bloquea la planta 3.",
+      "Con las pistas, descifra el código, habla con el Cuñao de la planta 2 y sube a la <strong>planta 3<\/strong>.",
+      "Recoge el <strong>Eevee nv.20<\/strong>.",
+      "<em>Post-Liga:<\/em> con todos los desarrolladores reunidos, aparece <strong>Eric<\/strong> (jefe del juego) en la oficina. Derrótale para obtener la <strong>Master Ball<\/strong>.",
     ],
     recompensa: "Eevee nv.20 · Master Ball (post-Liga, derrotando a Eric)"
   },
   {
     titulo: "Búsqueda de los Cuadros", icono: "🖼️",
-    inicio: "<strong>Galería de la Academia El Palmeral</strong> — un funcionario explica que el Equipo Gaviota vendió todos los cuadros.",
+    inicio: "<strong>Galería de la Academia El Palmeral<\/strong> — un funcionario explica que el Equipo Gaviota vendió todos los cuadros.",
     pasos: [
-      "Habla con el funcionario en la <strong>Galería de la Academia El Palmeral</strong> para iniciar.",
-      "Busca los cuadros repartidos por toda Iberia. Algunos lugares confirmados: <strong>Academia El Palmeral</strong> (galería), <strong>Hospicio de la Ribeira Sacra</strong> (planta superior), <strong>Palacio de la Asamblea en Melilla</strong> (interior).",
-      "Devuelve los cuadros al funcionario. Cuando el funcionario se traslade a la <strong>Casa Lis en Salamanca</strong>, ve allí a entregar el resto.",
-      "Al completar la entrega recibes la <strong>Llave Lis</strong>.",
-      "Usa la Llave Lis para abrir la sala privada de la Casa Lis — dentro está <strong>Meloetta</strong>.",
+      "Habla con el funcionario en la <strong>Galería de la Academia El Palmeral<\/strong> para iniciar.",
+      "Busca los cuadros repartidos por toda Iberia. Algunos lugares confirmados: <strong>Academia El Palmeral<\/strong> (galería), <strong>Hospicio de la Ribeira Sacra<\/strong> (planta superior), <strong>Palacio de la Asamblea en Melilla<\/strong> (interior).",
+      "Devuelve los cuadros al funcionario. Cuando el funcionario se traslade a la <strong>Casa Lis en Salamanca<\/strong>, ve allí a entregar el resto.",
+      "Al completar la entrega recibes la <strong>Llave Lis<\/strong>.",
+      "Usa la Llave Lis para abrir la sala privada de la Casa Lis — dentro está <strong>Meloetta<\/strong>.",
     ],
     recompensa: "Llave Lis · Meloetta"
   },
   {
     titulo: "Búsqueda de Famosos", icono: "🌟",
-    inicio: "Automática — los famosetes están repartidos por toda Iberia. Incluyendo la <strong>Ruta Madrileña</strong> (Leiva, Sergio Ramos, Belén Esteban) y otras ciudades.",
+    inicio: "Automática — los famosetes están repartidos por toda Iberia. Incluyendo la <strong>Ruta Madrileña<\/strong> (Leiva, Sergio Ramos, Belén Esteban) y otras ciudades.",
     pasos: [
       "Recorre Iberia encontrando e interactuando con los famosetes en ciudades y rutas.",
-      "Al reunir la <strong>mitad</strong> de los famosetes ve a Madrid y habla con <strong>David Broncano</strong> → te entrega <strong>Grookey</strong>.",
+      "Al reunir la <strong>mitad<\/strong> de los famosetes ve a Madrid y habla con <strong>David Broncano<\/strong> → te entrega <strong>Grookey<\/strong>.",
       "Continúa encontrando al resto de famosetes por toda la región.",
       "Al completar la colección entera se desbloquean más recompensas.",
     ],
@@ -1724,276 +1727,276 @@ const MISIONES = [
   },
   {
     titulo: "Búsqueda de Ultraentes", icono: "👾",
-    inicio: "<strong>Ruta Leonesa Norte</strong> — activa la misión en esta zona.",
+    inicio: "<strong>Ruta Leonesa Norte<\/strong> — activa la misión en esta zona.",
     pasos: [
-      "Activa la misión de la Búsqueda de Ultraentes en la <strong>Ruta Leonesa Norte</strong>.",
-      "Los Ultraentes aparecen en ultraumbrales repartidos por Iberia. Uno confirmado: <strong>Buzzwole</strong> aparece en un ultraumbral de la Ruta Leonesa Norte.",
-      "Localiza y <strong>captura cada Ultraente</strong> en sus ultraumbrales correspondientes.",
-      "Cuando los tengas <strong>todos capturados</strong>, ve a la <strong>Torre de Control del Aeropuerto de Castellón</strong> donde Iker Jiménez estará esperándote.",
+      "Activa la misión de la Búsqueda de Ultraentes en la <strong>Ruta Leonesa Norte<\/strong>.",
+      "Los Ultraentes aparecen en ultraumbrales repartidos por Iberia. Uno confirmado: <strong>Buzzwole<\/strong> aparece en un ultraumbral de la Ruta Leonesa Norte.",
+      "Localiza y <strong>captura cada Ultraente<\/strong> en sus ultraumbrales correspondientes.",
+      "Cuando los tengas <strong>todos capturados<\/strong>, ve a la <strong>Torre de Control del Aeropuerto de Castellón<\/strong> donde Iker Jiménez estará esperándote.",
       "Interactúa con Iker para completar la misión.",
-      "<em>⚠️ Bug conocido:</em> si Iker no interactúa, comprueba que hayas completado correctamente todos los eventos relacionados con los ultraumbrales.",
+      "<em>⚠️ Bug conocido:<\/em> si Iker no interactúa, comprueba que hayas completado correctamente todos los eventos relacionados con los ultraumbrales.",
     ],
     recompensa: "Premio de Iker Jiménez (última misión secundaria del juego)"
   },
   {
     titulo: "Búsqueda del Unown Ñ", icono: "🔡",
-    inicio: "<strong>Castillos Leoneses</strong> (Ruta Leonesa Sur) — resuelve los puzzles de los castillos.",
+    inicio: "<strong>Castillos Leoneses<\/strong> (Ruta Leonesa Sur) — resuelve los puzzles de los castillos.",
     pasos: [
-      "Ve a los <strong>castillos leoneses</strong> de la Ruta Leonesa Sur.",
-      "Resuelve los <strong>puzzles</strong> presentes en dos de los castillos leoneses.",
-      "Esto desbloquea el acceso a una sala secreta en el <strong>tercer castillo leonés</strong>.",
-      "Dentro de la sala encontrarás al <strong>Unown Ñ</strong>, variante exclusiva de Iberia.",
+      "Ve a los <strong>castillos leoneses<\/strong> de la Ruta Leonesa Sur.",
+      "Resuelve los <strong>puzzles<\/strong> presentes en dos de los castillos leoneses.",
+      "Esto desbloquea el acceso a una sala secreta en el <strong>tercer castillo leonés<\/strong>.",
+      "Dentro de la sala encontrarás al <strong>Unown Ñ<\/strong>, variante exclusiva de Iberia.",
       "Captúralo (único encuentro en el juego).",
-      "<em>Bonus:</em> muéstraselo a <strong>Iker Jiménez</strong>, quien te dará a <strong>Treecko</strong> (inicial de Hoenn) a cambio.",
+      "<em>Bonus:<\/em> muéstraselo a <strong>Iker Jiménez<\/strong>, quien te dará a <strong>Treecko<\/strong> (inicial de Hoenn) a cambio.",
     ],
     recompensa: "Unown Ñ (exclusivo) · Treecko (mostrárselo a Iker)"
   },
   {
     titulo: "Tabaco (Gibraltar)", icono: "🚬",
-    inicio: "<strong>Gibraltar</strong> — visita el puesto de tabaco en la ciudad.",
+    inicio: "<strong>Gibraltar<\/strong> — visita el puesto de tabaco en la ciudad.",
     pasos: [
-      "Habla con el <strong>dueño del puesto de tabaco</strong> en Gibraltar para iniciar.",
-      "Deberás entregar tabaco a <strong>5 personajes</strong> repartidos por el juego, que a su vez te darán objetos a cambio.",
-      "Uno de los receptores del tabaco confirmado: el <strong>dueño del limonar</strong> (encargo en la Ruta Andaluza Oriental). Otro: el <strong>Kaki</strong> en la Ruta Manchega (necesitas la Medalla Duende para que aparezca).",
-      "Tras entregar el tabaco a los 5 personajes, vuelve al <strong>dueño del puesto de tabaco</strong> en Gibraltar.",
-      "Te entrega un <strong>Charmander</strong>.",
+      "Habla con el <strong>dueño del puesto de tabaco<\/strong> en Gibraltar para iniciar.",
+      "Deberás entregar tabaco a <strong>5 personajes<\/strong> repartidos por el juego, que a su vez te darán objetos a cambio.",
+      "Uno de los receptores del tabaco confirmado: el <strong>dueño del limonar<\/strong> (encargo en la Ruta Andaluza Oriental). Otro: el <strong>Kaki<\/strong> en la Ruta Manchega (necesitas la Medalla Duende para que aparezca).",
+      "Tras entregar el tabaco a los 5 personajes, vuelve al <strong>dueño del puesto de tabaco<\/strong> en Gibraltar.",
+      "Te entrega un <strong>Charmander<\/strong>.",
     ],
     recompensa: "Charmander · objetos varios de los 5 receptores"
   },
   {
     titulo: "Chistorra / Rioja Extra", icono: "🌭",
-    inicio: "<strong>Pamplona</strong> — participa en los encierros de Sanfermines.",
+    inicio: "<strong>Pamplona<\/strong> — participa en los encierros de Sanfermines.",
     pasos: [
-      "Ve a <strong>Pamplona</strong> y participa en el minijuego de los <strong>encierros de Sanfermines</strong>: evita ser arrollado por los Tauros que te persiguen por el circuito.",
-      "La <strong>primera vez</strong> que llegues al final recibes un <strong>Bulbasaur</strong>. Las veces siguientes recibes una Pepita.",
-      "Durante el recorrido del encierro encontrarás una <strong>Chistorra</strong> — recógela.",
-      "Ve a la <strong>Bodega de la Ruta Riojana</strong> y habla con la <strong>caja azul</strong> que hay dentro.",
-      "Intercambia la Chistorra por el <strong>Rioja Extra</strong>, objeto de combate especial.",
-      "<em>Bonus:</em> en una casa de Pamplona, un hombre da una <strong>Piedra Noche</strong> a cambio de un Rioja normal.",
+      "Ve a <strong>Pamplona<\/strong> y participa en el minijuego de los <strong>encierros de Sanfermines<\/strong>: evita ser arrollado por los Tauros que te persiguen por el circuito.",
+      "La <strong>primera vez<\/strong> que llegues al final recibes un <strong>Bulbasaur<\/strong>. Las veces siguientes recibes una Pepita.",
+      "Durante el recorrido del encierro encontrarás una <strong>Chistorra<\/strong> — recógela.",
+      "Ve a la <strong>Bodega de la Ruta Riojana<\/strong> y habla con la <strong>caja azul<\/strong> que hay dentro.",
+      "Intercambia la Chistorra por el <strong>Rioja Extra<\/strong>, objeto de combate especial.",
+      "<em>Bonus:<\/em> en una casa de Pamplona, un hombre da una <strong>Piedra Noche<\/strong> a cambio de un Rioja normal.",
     ],
     recompensa: "Bulbasaur (1ª vez en encierro) · Rioja Extra (intercambio Chistorra) · Piedra Noche (por Rioja)"
   },
   {
     titulo: "Las Ventas / Encierros (Madrid)", icono: "🐂",
-    inicio: "<strong>Las Ventas, Madrid</strong> — al norte del Parque del Retiro.",
+    inicio: "<strong>Las Ventas, Madrid<\/strong> — al norte del Parque del Retiro.",
     pasos: [
-      "Ve a <strong>Las Ventas</strong> en Madrid (al norte del Parque del Retiro).",
-      "Deberás elegir entre dos bandos: enfrentarte a los <strong>toreros</strong> o a los <strong>antitaurinos</strong>.",
-      "Si derrotas a los <strong>toreros</strong> → recibes <strong>Tauros</strong>.",
-      "Si derrotas a los <strong>antitaurinos</strong> → recibes la <strong>MT Megacuerno</strong>.",
-      "<em>Post-Liga:</em> un torero en el exterior te entrega la <strong>recompensa que no elegiste</strong> la primera vez, así puedes obtener ambas.",
-      "<em>Bonus cercano:</em> en la casa del YouTuber <strong>Rubius</strong> (misma zona) hay un <strong>Huevo Suerte</strong> en su papelera y 100.000 pokéuros si le derrotas.",
+      "Ve a <strong>Las Ventas<\/strong> en Madrid (al norte del Parque del Retiro).",
+      "Deberás elegir entre dos bandos: enfrentarte a los <strong>toreros<\/strong> o a los <strong>antitaurinos<\/strong>.",
+      "Si derrotas a los <strong>toreros<\/strong> → recibes <strong>Tauros<\/strong>.",
+      "Si derrotas a los <strong>antitaurinos<\/strong> → recibes la <strong>MT Megacuerno<\/strong>.",
+      "<em>Post-Liga:<\/em> un torero en el exterior te entrega la <strong>recompensa que no elegiste<\/strong> la primera vez, así puedes obtener ambas.",
+      "<em>Bonus cercano:<\/em> en la casa del YouTuber <strong>Rubius<\/strong> (misma zona) hay un <strong>Huevo Suerte<\/strong> en su papelera y 100.000 pokéuros si le derrotas.",
     ],
     recompensa: "Tauros (toreros) · MT Megacuerno (antitaurinos) · ambas en post-Liga"
   },
   {
     titulo: "Aeropuerto de Castellón / Rotom", icono: "✈️",
-    inicio: "Al <strong>este de la Ruta Maña</strong> — acceso al aeropuerto abandonado.",
+    inicio: "Al <strong>este de la Ruta Maña<\/strong> — acceso al aeropuerto abandonado.",
     pasos: [
-      "Toma el camino al <strong>este de la Ruta Maña</strong> para acceder al aeropuerto abandonado.",
-      "Un <strong>anciano desesperado</strong> te pide ayuda: su hijo entró a la torre de control hace años y no ha vuelto. Para entrar necesitas la <strong>Tarjeta Aeropuerto</strong>.",
-      "<em>Cómo obtener la Tarjeta Aeropuerto:</em> consigue el <strong>Rioja Extra</strong> (ver misión Chistorra) y entrégaselo al <strong>Machoke</strong> que bloquea el Mercado Central de Zaragoza. El Machoke se aparta y puedes coger la tarjeta.",
-      "Entra a la torre. Dentro encontrarás a <strong>Iker Jiménez</strong>, que explora el lugar. En plantas superiores reaparecerá y te desafiará (está poseído por un Pokémon) — derrótale.",
-      "En la <strong>última planta</strong> encontrarás a <strong>Rotom</strong> (encuentro único — ¡guarda antes!).",
+      "Toma el camino al <strong>este de la Ruta Maña<\/strong> para acceder al aeropuerto abandonado.",
+      "Un <strong>anciano desesperado<\/strong> te pide ayuda: su hijo entró a la torre de control hace años y no ha vuelto. Para entrar necesitas la <strong>Tarjeta Aeropuerto<\/strong>.",
+      "<em>Cómo obtener la Tarjeta Aeropuerto:<\/em> consigue el <strong>Rioja Extra<\/strong> (ver misión Chistorra) y entrégaselo al <strong>Machoke<\/strong> que bloquea el Mercado Central de Zaragoza. El Machoke se aparta y puedes coger la tarjeta.",
+      "Entra a la torre. Dentro encontrarás a <strong>Iker Jiménez<\/strong>, que explora el lugar. En plantas superiores reaparecerá y te desafiará (está poseído por un Pokémon) — derrótale.",
+      "En la <strong>última planta<\/strong> encontrarás a <strong>Rotom<\/strong> (encuentro único — ¡guarda antes!).",
       "Captura o derrota a Rotom. El chico desaparecido quedará libre y volverá con su padre.",
-      "El anciano te da una <strong>recompensa</strong> como agradecimiento.",
-      "<em>Bonus:</em> al sur del anciano hay la <strong>MT Bola Sombra</strong>.",
+      "El anciano te da una <strong>recompensa<\/strong> como agradecimiento.",
+      "<em>Bonus:<\/em> al sur del anciano hay la <strong>MT Bola Sombra<\/strong>.",
     ],
     recompensa: "Rotom (encuentro único) · recompensa del anciano · MT Bola Sombra"
   },
   {
     titulo: "Cueva de Altamira / Urobos", icono: "🦎",
-    inicio: "<strong>Ruta Cántabra</strong> — accede a la Cueva de Altamira.",
+    inicio: "<strong>Ruta Cántabra<\/strong> — accede a la Cueva de Altamira.",
     pasos: [
-      "Ve a la <strong>Cueva de Altamira</strong> en la Ruta Cántabra.",
-      "Recorre la cueva hasta encontrar a un <strong>científico</strong> frente a una pintura rupestre incompleta.",
-      "El científico te pide ir a <strong>Zaragoza</strong> a buscar a la pintora restauradora <strong>Cecilia</strong>.",
-      "Ve a Zaragoza, habla con <strong>Cecilia</strong> — decide ir en persona a la cueva.",
+      "Ve a la <strong>Cueva de Altamira<\/strong> en la Ruta Cántabra.",
+      "Recorre la cueva hasta encontrar a un <strong>científico<\/strong> frente a una pintura rupestre incompleta.",
+      "El científico te pide ir a <strong>Zaragoza<\/strong> a buscar a la pintora restauradora <strong>Cecilia<\/strong>.",
+      "Ve a Zaragoza, habla con <strong>Cecilia<\/strong> — decide ir en persona a la cueva.",
       "Vuelve a la cueva con Cecilia. Ella restaura la pintura.",
-      "Un <strong>Urobos furioso</strong> emerge de la pintura — ¡guarda antes de interactuar! Es un encuentro único.",
-      "Tras capturarlo/derrotarlo, aparecen en la cueva <strong>4 pinturas de colores</strong> que permiten cambiar la <strong>forma de Urobos</strong>, dándole un tipo secundario y movimiento diferente.",
+      "Un <strong>Urobos furioso<\/strong> emerge de la pintura — ¡guarda antes de interactuar! Es un encuentro único.",
+      "Tras capturarlo/derrotarlo, aparecen en la cueva <strong>4 pinturas de colores<\/strong> que permiten cambiar la <strong>forma de Urobos<\/strong>, dándole un tipo secundario y movimiento diferente.",
     ],
     recompensa: "Urobos (Pokémon exclusivo de Iberia, encuentro único)"
   },
   {
     titulo: "Valle del Jerte / Jirachi y legendarios", icono: "🌸",
-    inicio: "<strong>Valle del Jerte</strong> (este de la Ruta Leonesa Sur) — habla con la anciana.",
+    inicio: "<strong>Valle del Jerte<\/strong> (este de la Ruta Leonesa Sur) — habla con la anciana.",
     pasos: [
-      "Ve al <strong>Valle del Jerte</strong> y habla con la anciana de la casa.",
-      "La anciana te pide que <strong>captures a todos los Pokémon salvajes</strong> del Valle del Jerte (principalmente tipos Planta y/o Hada).",
+      "Ve al <strong>Valle del Jerte<\/strong> y habla con la anciana de la casa.",
+      "La anciana te pide que <strong>captures a todos los Pokémon salvajes<\/strong> del Valle del Jerte (principalmente tipos Planta y/o Hada).",
       "Completa la captura de todos los Pokémon del valle y vuelve con la anciana.",
-      "Recibes la <strong>MT Zumbido</strong>.",
-      "<em>Post-Liga:</em> ahora aparece <strong>Jirachi</strong> en el valle. Guarda antes. Cápturalo.",
-      "Al capturar a Jirachi, la anciana te da la <strong>MT Sustituto</strong> y se abre una <strong>nueva zona del valle</strong>.",
-      "En esta nueva zona puedes capturar a <strong>Uxie, Azelf, Mesprit</strong> y <strong>Shaymin</strong>.",
+      "Recibes la <strong>MT Zumbido<\/strong>.",
+      "<em>Post-Liga:<\/em> ahora aparece <strong>Jirachi<\/strong> en el valle. Guarda antes. Cápturalo.",
+      "Al capturar a Jirachi, la anciana te da la <strong>MT Sustituto<\/strong> y se abre una <strong>nueva zona del valle<\/strong>.",
+      "En esta nueva zona puedes capturar a <strong>Uxie, Azelf, Mesprit<\/strong> y <strong>Shaymin<\/strong>.",
     ],
     recompensa: "MT Zumbido · Jirachi · MT Sustituto · Uxie / Azelf / Mesprit / Shaymin"
   },
   {
     titulo: "Jamón de Bellota / Skiddo F.I.", icono: "🐷",
-    inicio: "<strong>Ruta Extremeña</strong> (solo accesible tras llegar a Mérida) — busca la Jamonería.",
+    inicio: "<strong>Ruta Extremeña<\/strong> (solo accesible tras llegar a Mérida) — busca la Jamonería.",
     pasos: [
-      "Accede a la <strong>Ruta Extremeña</strong> (conecta Mérida con Sevilla, solo disponible tras llegar a Mérida por la Ruta Leonesa Sur).",
-      "Busca la <strong>Jamonería</strong> en la ruta y adquiere el objeto <strong>Jamón de Bellota</strong>.",
-      "Ve a <strong>Melilla</strong> y busca al <strong>Legionario</strong> en una casa al suroeste de la ciudad.",
-      "Entrégale el Jamón de Bellota → te da un <strong>Huevo Pokémon</strong>.",
-      "Del huevo nacerá un <strong>Skiddo Forma Iberia</strong>.",
-      "<em>Curiosidad:</em> en la Ruta Extremeña aparecen salvajes Shelmet Forma Iberia, Accelgor Forma Iberia y Tepig (rarísimo).",
+      "Accede a la <strong>Ruta Extremeña<\/strong> (conecta Mérida con Sevilla, solo disponible tras llegar a Mérida por la Ruta Leonesa Sur).",
+      "Busca la <strong>Jamonería<\/strong> en la ruta y adquiere el objeto <strong>Jamón de Bellota<\/strong>.",
+      "Ve a <strong>Melilla<\/strong> y busca al <strong>Legionario<\/strong> en una casa al suroeste de la ciudad.",
+      "Entrégale el Jamón de Bellota → te da un <strong>Huevo Pokémon<\/strong>.",
+      "Del huevo nacerá un <strong>Skiddo Forma Iberia<\/strong>.",
+      "<em>Curiosidad:<\/em> en la Ruta Extremeña aparecen salvajes Shelmet Forma Iberia, Accelgor Forma Iberia y Tepig (rarísimo).",
     ],
     recompensa: "Skiddo Forma Iberia (huevo)"
   },
   {
     titulo: "Andorra / Bagon", icono: "🏔️",
-    inicio: "<strong>Andorra</strong> (Ruta Oscense) — necesitas la Medalla Botafumeiro para pasar el control.",
+    inicio: "<strong>Andorra<\/strong> (Ruta Oscense) — necesitas la Medalla Botafumeiro para pasar el control.",
     pasos: [
-      "Con la <strong>Medalla Botafumeiro</strong>, pasa el control en la <strong>Ruta Oscense</strong> y llega a <strong>Andorra</strong>.",
-      "Visita la <strong>Casa de la Vall</strong> y habla con el <strong>Molt Honoraple Pujol</strong>.",
-      "Pujol te pide que derrotes a los <strong>YouTubers</strong> que se han instalado en la ciudad y hacen ruido.",
+      "Con la <strong>Medalla Botafumeiro<\/strong>, pasa el control en la <strong>Ruta Oscense<\/strong> y llega a <strong>Andorra<\/strong>.",
+      "Visita la <strong>Casa de la Vall<\/strong> y habla con el <strong>Molt Honoraple Pujol<\/strong>.",
+      "Pujol te pide que derrotes a los <strong>YouTubers<\/strong> que se han instalado en la ciudad y hacen ruido.",
       "Encuéntralos y derrótatos a todos.",
       "Vuelve con Pujol — ahora acepta combatir contigo.",
-      "Derrota a Pujol → te entrega a <strong>Bagon</strong>.",
-      "<em>Bonus en Andorra:</em> el <strong>Maestro de Habilidades</strong> puede cambiar la habilidad normal de tu primer Pokémon por su habilidad oculta (previo pago).",
+      "Derrota a Pujol → te entrega a <strong>Bagon<\/strong>.",
+      "<em>Bonus en Andorra:<\/em> el <strong>Maestro de Habilidades<\/strong> puede cambiar la habilidad normal de tu primer Pokémon por su habilidad oculta (previo pago).",
     ],
     recompensa: "Bagon · acceso al Maestro de Habilidades"
   },
   {
     titulo: "Búsqueda de los Cuadros - Hospicio", icono: "🏥",
-    inicio: "<strong>Ribeira Sacra</strong> — el Hospicio sirve también de Centro Pokémon.",
+    inicio: "<strong>Ribeira Sacra<\/strong> — el Hospicio sirve también de Centro Pokémon.",
     pasos: [
-      "Visita el <strong>Hospicio de la Ribeira Sacra</strong> (necesitas MO Surf para llegar).",
+      "Visita el <strong>Hospicio de la Ribeira Sacra<\/strong> (necesitas MO Surf para llegar).",
       "Cura a tus Pokémon si lo necesitas (funciona como Centro Pokémon).",
-      "Sube a la <strong>planta superior</strong> y recoge el <strong>cuadro</strong> para la misión Búsqueda de los Cuadros.",
-      "En la misma planta puedes intercambiar Pokémon con los <strong>peregrinos</strong> alojados: <strong>Furfrou</strong> (por Granbull), <strong>Cursola</strong> (por Corsola), <strong>Runerigus</strong> (por Cofagrigus).",
+      "Sube a la <strong>planta superior<\/strong> y recoge el <strong>cuadro<\/strong> para la misión Búsqueda de los Cuadros.",
+      "En la misma planta puedes intercambiar Pokémon con los <strong>peregrinos<\/strong> alojados: <strong>Furfrou<\/strong> (por Granbull), <strong>Cursola<\/strong> (por Corsola), <strong>Runerigus<\/strong> (por Cofagrigus).",
     ],
     recompensa: "Cuadro (Búsqueda de Cuadros) · Furfrou / Cursola / Runerigus (intercambios)"
   },
   {
     titulo: "Parque de Cabárceno / Gafas", icono: "👓",
-    inicio: "<strong>Parque de Cabárceno</strong> (norte de la Ruta Cántabra).",
+    inicio: "<strong>Parque de Cabárceno<\/strong> (norte de la Ruta Cántabra).",
     pasos: [
-      "Ve al <strong>Parque de Cabárceno</strong> (uno de los dos lugares tipo Zona Safari, el otro es Doñana).",
+      "Ve al <strong>Parque de Cabárceno<\/strong> (uno de los dos lugares tipo Zona Safari, el otro es Doñana).",
       "Explora el parque — podrás capturar Pokémon exclusivos como Fearow o Hippopotas.",
-      "En un rincón del parque, un chico te dice que ha <strong>perdido sus gafas</strong>.",
+      "En un rincón del parque, un chico te dice que ha <strong>perdido sus gafas<\/strong>.",
       "Búscalas por el parque y devuélveselas.",
-      "Te entrega un <strong>Carameloraro</strong>.",
-      "<em>Bonus:</em> en otro rincón del parque encontrarás la <strong>MT Cabezazo Zen</strong>.",
+      "Te entrega un <strong>Carameloraro<\/strong>.",
+      "<em>Bonus:<\/em> en otro rincón del parque encontrarás la <strong>MT Cabezazo Zen<\/strong>.",
     ],
     recompensa: "Carameloraro · MT Cabezazo Zen (en el parque)"
   },
   {
     titulo: "Paellería / Lotad Forma Iberia", icono: "🥘",
-    inicio: "<strong>Paellería de la Ruta Levante</strong>.",
+    inicio: "<strong>Paellería de la Ruta Levante<\/strong>.",
     pasos: [
-      "Visita la <strong>Paellería</strong> de la Ruta Levante.",
-      "Habla con el <strong>camarero</strong>.",
-      "Recibes un <strong>huevo de Lotad Forma Iberia</strong> (tipo Fuego/Agua).",
-      "<em>Nota:</em> en <strong>Ibiza (discoteca Pachá)</strong> encontrarás al cliente que se fue sin pagar de la Paellería — es también miembro de la Brigada de Desarrolladores.",
+      "Visita la <strong>Paellería<\/strong> de la Ruta Levante.",
+      "Habla con el <strong>camarero<\/strong>.",
+      "Recibes un <strong>huevo de Lotad Forma Iberia<\/strong> (tipo Fuego/Agua).",
+      "<em>Nota:<\/em> en <strong>Ibiza (discoteca Pachá)<\/strong> encontrarás al cliente que se fue sin pagar de la Paellería — es también miembro de la Brigada de Desarrolladores.",
     ],
     recompensa: "Lotad Forma Iberia (huevo, tipo Fuego/Agua)"
   },
   {
     titulo: "Hotel Santa Cruz / Klefki", icono: "🏨",
-    inicio: "<strong>Santa Cruz de Tenerife</strong> — hotel de la ciudad.",
+    inicio: "<strong>Santa Cruz de Tenerife<\/strong> — hotel de la ciudad.",
     pasos: [
-      "Paga para alojarte en el <strong>hotel de Santa Cruz de Tenerife</strong>.",
+      "Paga para alojarte en el <strong>hotel de Santa Cruz de Tenerife<\/strong>.",
       "Una trabajadora ha perdido a su Klefki — búscalo y devuélveselo.",
-      "Recibes un <strong>huevo de Klefki</strong>.",
-      "<em>Bonus en el hotel:</em> intercambios especiales con otros huéspedes: un peregrino da <strong>Sirfetch'd</strong> (por Farfetch'd F.I.), un caballero da <strong>Perrserker</strong> (por Persian), un guiri da <strong>Obstagoon</strong>.",
+      "Recibes un <strong>huevo de Klefki<\/strong>.",
+      "<em>Bonus en el hotel:<\/em> intercambios especiales con otros huéspedes: un peregrino da <strong>Sirfetch'd<\/strong> (por Farfetch'd F.I.), un caballero da <strong>Perrserker<\/strong> (por Persian), un guiri da <strong>Obstagoon<\/strong>.",
     ],
     recompensa: "Klefki (huevo) · Sirfetch'd / Perrserker / Obstagoon (intercambios)"
   },
   {
     titulo: "Tumba de Franco / Trama principal postgame", icono: "⚔️",
-    inicio: "<strong>Sierra de Guadarrama</strong> — tras convertirte en Campeón/a. Necesitas Equipo de Escalada + MO Surf.",
+    inicio: "<strong>Sierra de Guadarrama<\/strong> — tras convertirte en Campeón/a. Necesitas Equipo de Escalada + MO Surf.",
     pasos: [
-      "Tras ser Campeón/a, desciende la pared rocosa más cercana al pasillo con banderas en la entrada al <strong>Valle de los Caídos</strong> para llegar a un lago.",
-      "Usa <strong>Surf</strong> en el lago hacia el este — llegarás a una cueva con un <strong>Guardia Civil</strong> bloqueando. Págale <strong>100.000 Pokéuros</strong> de soborno.",
-      "Dentro encontrarás a <strong>Pedro Sánchez</strong>, que te encarga encontrar la <strong>Mano de Santa Teresa</strong>. Acepta.",
-      "Ve a <strong>Albacete</strong> y derrota a <strong>Jordi ENP</strong>. Él te indica ir a la <strong>Universidad de Salamanca</strong>.",
-      "En la <strong>Universidad de Salamanca</strong>, derrota a <strong>Unamuno</strong>. Te revela que las <strong>5 gemas</strong> están en: Cueva de Amboto, Sierra de Guadarrama, Sierra Nevada, Tenerife (Auditorio) y Mansión Pablemos.",
-      "Consigue las <strong>3 primeras gemas</strong> en las cuevas (Amboto, Guadarrama, Sierra Nevada) + la <strong>Mano de Santa Teresa</strong> en Melilla (derrota al Cuartel Militar).",
-      "Ve a <strong>Tenerife</strong>: consigue el Ala Arco Iris en el Loro Parque y la 4ª gema derrotando a Farray en el Auditorio.",
-      "Consigue la <strong>5ª gema</strong> en la <strong>Mansión Pablemos</strong> (Ruta Madrileña).",
-      "Vuelve a la <strong>Tumba de Franco</strong> con Sánchez y Unamuno. El espíritu de <strong>Franco</strong> (en cuerpo de Sánchez) será el jefe final — derrótale.",
-      "Tras la batalla, aparece <strong>Entei</strong>. Guarda antes. Cápturalo en el <strong>Valle Cinéreo</strong>.",
+      "Tras ser Campeón/a, desciende la pared rocosa más cercana al pasillo con banderas en la entrada al <strong>Valle de los Caídos<\/strong> para llegar a un lago.",
+      "Usa <strong>Surf<\/strong> en el lago hacia el este — llegarás a una cueva con un <strong>Guardia Civil<\/strong> bloqueando. Págale <strong>100.000 Pokéuros<\/strong> de soborno.",
+      "Dentro encontrarás a <strong>Pedro Sánchez<\/strong>, que te encarga encontrar la <strong>Mano de Santa Teresa<\/strong>. Acepta.",
+      "Ve a <strong>Albacete<\/strong> y derrota a <strong>Jordi ENP<\/strong>. Él te indica ir a la <strong>Universidad de Salamanca<\/strong>.",
+      "En la <strong>Universidad de Salamanca<\/strong>, derrota a <strong>Unamuno<\/strong>. Te revela que las <strong>5 gemas<\/strong> están en: Cueva de Amboto, Sierra de Guadarrama, Sierra Nevada, Tenerife (Auditorio) y Mansión Pablemos.",
+      "Consigue las <strong>3 primeras gemas<\/strong> en las cuevas (Amboto, Guadarrama, Sierra Nevada) + la <strong>Mano de Santa Teresa<\/strong> en Melilla (derrota al Cuartel Militar).",
+      "Ve a <strong>Tenerife<\/strong>: consigue el Ala Arco Iris en el Loro Parque y la 4ª gema derrotando a Farray en el Auditorio.",
+      "Consigue la <strong>5ª gema<\/strong> en la <strong>Mansión Pablemos<\/strong> (Ruta Madrileña).",
+      "Vuelve a la <strong>Tumba de Franco<\/strong> con Sánchez y Unamuno. El espíritu de <strong>Franco<\/strong> (en cuerpo de Sánchez) será el jefe final — derrótale.",
+      "Tras la batalla, aparece <strong>Entei<\/strong>. Guarda antes. Cápturalo en el <strong>Valle Cinéreo<\/strong>.",
     ],
     recompensa: "Entei · Corone Cinérea · créditos del postgame"
   },
   {
     titulo: "Torres KIO / Mewtwo / Team Rocket", icono: "🚀",
-    inicio: "<strong>Orilla oeste de Madrid</strong> — habla con el ex-recluta del Team Rocket.",
+    inicio: "<strong>Orilla oeste de Madrid<\/strong> — habla con el ex-recluta del Team Rocket.",
     pasos: [
-      "En la orilla oeste de Madrid, un ex-recluta del <strong>Team Rocket</strong> te avisa de que la banda está en las Torres KIO y te da su <strong>uniforme</strong>.",
-      "Usa el uniforme para engañar a los guardias y entra a las <strong>Torres KIO</strong>.",
+      "En la orilla oeste de Madrid, un ex-recluta del <strong>Team Rocket<\/strong> te avisa de que la banda está en las Torres KIO y te da su <strong>uniforme<\/strong>.",
+      "Usa el uniforme para engañar a los guardias y entra a las <strong>Torres KIO<\/strong>.",
       "Recorre el edificio desbloqueando puertas y teletransportes mientras derrotas reclutas.",
-      "Derrota a los jefes de la Logia (<strong>Mens y Ánima</strong>) en combate doble.",
-      "En la última planta, derrota a <strong>Corpore</strong> para llegar a <strong>Giovanni</strong>.",
-      "Giovanni libera a <strong>Mewtwo</strong> del tanque para incluirlo en su equipo — derrótale.",
-      "Tras el combate, <strong>Mewtwo</strong> espera en la sala. Guarda antes. Cápturalo.",
+      "Derrota a los jefes de la Logia (<strong>Mens y Ánima<\/strong>) en combate doble.",
+      "En la última planta, derrota a <strong>Corpore<\/strong> para llegar a <strong>Giovanni<\/strong>.",
+      "Giovanni libera a <strong>Mewtwo<\/strong> del tanque para incluirlo en su equipo — derrótale.",
+      "Tras el combate, <strong>Mewtwo<\/strong> espera en la sala. Guarda antes. Cápturalo.",
     ],
     recompensa: "Mewtwo (encuentro único)"
   },
 ];
 
 const LEGENDARIOS = [
-  { n: "Articuno", tipos: ["Hielo","Volador"], loc: "Cima de <strong>Sierra Nevada</strong>", req: "Obtener la Mano de Santa Teresa y hablar con Unamuno en Salamanca." },
-  { n: "Zapdos", tipos: ["Eléctrico","Volador"], loc: "Cima de la <strong>Cueva de Amboto</strong>", req: "Obtener la Mano de Santa Teresa y hablar con Unamuno en Salamanca." },
-  { n: "Moltres", tipos: ["Fuego","Volador"], loc: "Cima de la <strong>Sierra de Guadarrama</strong>", req: "Obtener la Mano de Santa Teresa y hablar con Unamuno en Salamanca." },
-  { n: "Mewtwo", tipos: ["Psíquico"], loc: "Planta 5 de la <strong>Torre KIO derecha (Madrid)</strong>", req: "Completar la trama del Team Rocket." },
-  { n: "Mew", tipos: ["Psíquico"], loc: "<strong>Ruta Andaluza Oriental</strong>", req: "Tener un Nidoking a nivel 100. (Referencia al famoso bulo de los juegos originales.)" },
-  { n: "Raikou", tipos: ["Eléctrico"], loc: "<strong>Cueva Gallega</strong>", req: "Derrotar al Alto Mando. Necesitas tener un Ampharos." },
-  { n: "Entei Forma Iberia", tipos: ["Fuego"], loc: "<strong>Valle Cinéreo</strong>", req: "Derrotar a Franco." },
-  { n: "Suicune", tipos: ["Agua"], loc: "<strong>Cueva Balear</strong>", req: "Derrotar al Alto Mando. Resolver el puzzle de las 4 rocas marrones para acceder a la sala." },
-  { n: "Lugia", tipos: ["Psíquico","Volador"], loc: "<strong>Isla Dragonera</strong>", req: "Completar la trama de Franco y obtener el Ala Plateada del Profesor Pino en Ibiza." },
-  { n: "Ho-Oh", tipos: ["Fuego","Volador"], loc: "Cima de la <strong>Giralda (Sevilla)</strong>", req: "Obtener el Ala Arcoíris en el concurso del Loro Parque (Santa Cruz de Tenerife)." },
-  { n: "Celebi", tipos: ["Psíquico","Planta"], loc: "Cueva secreta en <strong>El Palmeral</strong>", req: "Derrotar al Alto Mando." },
-  { n: "Regirock", tipos: ["Roca"], loc: "<strong>Peñón de Gibraltar</strong>", req: "Completar la trama de Franco y luchar contra Regigigas primero." },
-  { n: "Regice", tipos: ["Hielo"], loc: "<strong>Peñón de Gibraltar</strong>", req: "Completar la trama de Franco y luchar contra Regigigas primero." },
-  { n: "Registeel", tipos: ["Acero"], loc: "<strong>Peñón de Gibraltar</strong>", req: "Completar la trama de Franco y luchar contra Regigigas primero." },
-  { n: "Regigigas", tipos: ["Normal"], loc: "<strong>Peñón de Gibraltar</strong>", req: "Completar la trama de Franco. (Enfrentarlo desbloquea a Regirock, Regice y Registeel.)" },
-  { n: "Latias", tipos: ["Dragón","Psíquico"], loc: "Pokémon <strong>errante</strong>", req: "Completar la trama de Franco y derrotar al Profesor Hilario." },
-  { n: "Latios", tipos: ["Dragón","Psíquico"], loc: "Pokémon <strong>errante</strong>", req: "Completar la trama de Franco y derrotar al Profesor Hilario." },
-  { n: "Kyogre", tipos: ["Agua"], loc: "Zona submarina en <strong>Lisboa</strong>", req: "Completar la trama del Team Rocket. Interactuar con el ordenador del Palacio de las Artes y las Ciencias de Valencia." },
-  { n: "Groudon", tipos: ["Tierra"], loc: "<strong>El Teide</strong>", req: "Completar la trama del Team Rocket." },
-  { n: "Rayquaza", tipos: ["Dragón","Volador"], loc: "Cima de los <strong>Pirineos</strong>", req: "Completar la trama del Team Rocket." },
-  { n: "Jirachi", tipos: ["Acero","Psíquico"], loc: "<strong>Valle del Jerte</strong>", req: "Obtener la MT Zumbido de manos de la anciana." },
-  { n: "Deoxys", tipos: ["Psíquico"], loc: "Casa en <strong>Valladolid</strong>, disfrazado de JL", req: "Completar la trama de Franco." },
-  { n: "Uxie", tipos: ["Psíquico"], loc: "<strong>Valle del Jerte</strong>", req: "Luchar contra Jirachi y obtener la MT Sustituto." },
-  { n: "Azelf", tipos: ["Psíquico"], loc: "<strong>Valle del Jerte</strong>", req: "Luchar contra Jirachi y obtener la MT Sustituto." },
-  { n: "Mesprit", tipos: ["Psíquico"], loc: "<strong>Valle del Jerte</strong>", req: "Luchar contra Jirachi y obtener la MT Sustituto." },
-  { n: "Dialga", tipos: ["Acero","Dragón"], loc: "<strong>Torre Iberdrola</strong>", req: "Completar la trama de Franco y derrotar al Profesor Hilario." },
-  { n: "Palkia", tipos: ["Agua","Dragón"], loc: "<strong>Torre Iberdrola</strong>", req: "Completar la trama de Franco y derrotar al Profesor Hilario." },
-  { n: "Giratina", tipos: ["Fantasma","Dragón"], loc: "<strong>Torre Iberdrola</strong>", req: "Completar la trama de Franco y derrotar al Profesor Hilario." },
-  { n: "Heatran", tipos: ["Fuego","Acero"], loc: "<strong>El Teide</strong>", req: "Completar la trama de Franco." },
-  { n: "Cresselia", tipos: ["Psíquico"], loc: "<strong>Alhambra</strong>", req: "Completar la trama de Franco." },
-  { n: "Manaphy", tipos: ["Agua"], loc: "<strong>Oceanogràfic</strong>", req: "Capturar a Kyogre y llevarlo en el primer lugar del equipo." },
-  { n: "Darkrai", tipos: ["Siniestro"], loc: "<strong>Tumba de Franco</strong>", req: "Completar la trama de Franco." },
-  { n: "Shaymin", tipos: ["Planta"], loc: "<strong>Valle del Jerte</strong>", req: "Luchar contra Jirachi y obtener la MT Sustituto." },
-  { n: "Arceus", tipos: ["Normal"], loc: "<strong>Catedral de Santiago</strong>", req: "Completar la trama de Franco + donar dinero a todas las iglesias + obtener MT Pulso Cura + dar limosna al vagabundo del Mercadona de Murcia 10 veces." },
-  { n: "Victini", tipos: ["Psíquico","Fuego"], loc: "Cueva secreta en la <strong>Ruta Castellana</strong>", req: "Completar la trama de Franco." },
-  { n: "Cobalion", tipos: ["Acero","Lucha"], loc: "Pokémon <strong>errante</strong>", req: "Luchar contra Keldeo." },
-  { n: "Terrakion", tipos: ["Roca","Lucha"], loc: "Pokémon <strong>errante</strong>", req: "Luchar contra Keldeo." },
-  { n: "Virizion", tipos: ["Planta","Lucha"], loc: "Pokémon <strong>errante</strong>", req: "Luchar contra Keldeo." },
-  { n: "Keldeo", tipos: ["Agua","Lucha"], loc: "Cueva secreta en la <strong>Ruta Toledana</strong>", req: "Completar la trama de Franco." },
-  { n: "Tornadus", tipos: ["Volador"], loc: "<strong>Cueva Gallega</strong>", req: "Completar la trama de Franco." },
-  { n: "Thundurus", tipos: ["Eléctrico","Volador"], loc: "<strong>Cueva Gallega</strong>", req: "Completar la trama de Franco." },
-  { n: "Landorus", tipos: ["Tierra","Volador"], loc: "<strong>Cueva Gallega</strong>", req: "Completar la trama de Franco." },
-  { n: "Reshiram", tipos: ["Dragón","Fuego"], loc: "<strong>Sierra de Guadarrama</strong>", req: "Completar la trama de Franco." },
-  { n: "Zekrom", tipos: ["Dragón","Eléctrico"], loc: "<strong>Cueva de Amboto</strong>", req: "Completar la trama de Franco." },
-  { n: "Kyurem", tipos: ["Dragón","Hielo"], loc: "<strong>Sierra Nevada</strong>", req: "Completar la trama de Franco." },
-  { n: "Meloetta", tipos: ["Normal","Psíquico"], loc: "<strong>Casa Lis</strong>", req: "Obtener la Llave Lis completando la Búsqueda de los cuadros." },
-  { n: "Genesect", tipos: ["Bicho","Acero"], loc: "<strong>Islote de Perejil</strong>", req: "Completar la trama de Franco." },
-  { n: "Xerneas", tipos: ["Hada"], loc: "Cueva secreta en los <strong>Pinares de Rodeno</strong>", req: "Completar la trama de Franco y hablar con Errejón en la Mansión Pablemos." },
-  { n: "Yveltal", tipos: ["Siniestro","Volador"], loc: "Torre de control del <strong>Aeropuerto de Castellón</strong>", req: "Completar la trama de Franco y hablar con Errejón en la Mansión Pablemos." },
-  { n: "Zygarde", tipos: ["Dragón","Tierra"], loc: "Cueva secreta en la <strong>Ruta Madrileña</strong>", req: "Capturar a Xerneas e Yveltal primero." },
-  { n: "Diancie", tipos: ["Roca","Hada"], loc: "<strong>Cueva Maña</strong>", req: "Completar la trama de Franco." },
-  { n: "Hoopa", tipos: ["Psíquico","Fantasma"], loc: "Cueva secreta en la <strong>Ruta Africana</strong>", req: "Completar la trama de Franco." },
-  { n: "Volcanion", tipos: ["Fuego","Agua"], loc: "<strong>El Teide</strong>", req: "Completar la trama de Franco." },
-  { n: "Código Cero", tipos: ["Normal"], loc: "Casino de <strong>Melilla</strong>", req: "Completar la trama de Franco." },
-  { n: "Tapu Koko", tipos: ["Eléctrico","Hada"], loc: "<strong>Archipiélago Canario</strong>", req: "Completar la trama de Franco." },
-  { n: "Tapu Lele", tipos: ["Psíquico","Hada"], loc: "<strong>Archipiélago Canario</strong>", req: "Completar la trama de Franco." },
-  { n: "Tapu Bulu", tipos: ["Planta","Hada"], loc: "<strong>Archipiélago Canario</strong>", req: "Completar la trama de Franco." },
-  { n: "Tapu Fini", tipos: ["Agua","Hada"], loc: "<strong>Archipiélago Canario</strong>", req: "Completar la trama de Franco." },
+  { n: "Articuno", tipos: ["Hielo","Volador"], loc: "Cima de <strong>Sierra Nevada<\/strong>", req: "Obtener la Mano de Santa Teresa y hablar con Unamuno en Salamanca." },
+  { n: "Zapdos", tipos: ["Eléctrico","Volador"], loc: "Cima de la <strong>Cueva de Amboto<\/strong>", req: "Obtener la Mano de Santa Teresa y hablar con Unamuno en Salamanca." },
+  { n: "Moltres", tipos: ["Fuego","Volador"], loc: "Cima de la <strong>Sierra de Guadarrama<\/strong>", req: "Obtener la Mano de Santa Teresa y hablar con Unamuno en Salamanca." },
+  { n: "Mewtwo", tipos: ["Psíquico"], loc: "Planta 5 de la <strong>Torre KIO derecha (Madrid)<\/strong>", req: "Completar la trama del Team Rocket." },
+  { n: "Mew", tipos: ["Psíquico"], loc: "<strong>Ruta Andaluza Oriental<\/strong>", req: "Tener un Nidoking a nivel 100. (Referencia al famoso bulo de los juegos originales.)" },
+  { n: "Raikou", tipos: ["Eléctrico"], loc: "<strong>Cueva Gallega<\/strong>", req: "Derrotar al Alto Mando. Necesitas tener un Ampharos." },
+  { n: "Entei Forma Iberia", tipos: ["Fuego"], loc: "<strong>Valle Cinéreo<\/strong>", req: "Derrotar a Franco." },
+  { n: "Suicune", tipos: ["Agua"], loc: "<strong>Cueva Balear<\/strong>", req: "Derrotar al Alto Mando. Resolver el puzzle de las 4 rocas marrones para acceder a la sala." },
+  { n: "Lugia", tipos: ["Psíquico","Volador"], loc: "<strong>Isla Dragonera<\/strong>", req: "Completar la trama de Franco y obtener el Ala Plateada del Profesor Pino en Ibiza." },
+  { n: "Ho-Oh", tipos: ["Fuego","Volador"], loc: "Cima de la <strong>Giralda (Sevilla)<\/strong>", req: "Obtener el Ala Arcoíris en el concurso del Loro Parque (Santa Cruz de Tenerife)." },
+  { n: "Celebi", tipos: ["Psíquico","Planta"], loc: "Cueva secreta en <strong>El Palmeral<\/strong>", req: "Derrotar al Alto Mando." },
+  { n: "Regirock", tipos: ["Roca"], loc: "<strong>Peñón de Gibraltar<\/strong>", req: "Completar la trama de Franco y luchar contra Regigigas primero." },
+  { n: "Regice", tipos: ["Hielo"], loc: "<strong>Peñón de Gibraltar<\/strong>", req: "Completar la trama de Franco y luchar contra Regigigas primero." },
+  { n: "Registeel", tipos: ["Acero"], loc: "<strong>Peñón de Gibraltar<\/strong>", req: "Completar la trama de Franco y luchar contra Regigigas primero." },
+  { n: "Regigigas", tipos: ["Normal"], loc: "<strong>Peñón de Gibraltar<\/strong>", req: "Completar la trama de Franco. (Enfrentarlo desbloquea a Regirock, Regice y Registeel.)" },
+  { n: "Latias", tipos: ["Dragón","Psíquico"], loc: "Pokémon <strong>errante<\/strong>", req: "Completar la trama de Franco y derrotar al Profesor Hilario." },
+  { n: "Latios", tipos: ["Dragón","Psíquico"], loc: "Pokémon <strong>errante<\/strong>", req: "Completar la trama de Franco y derrotar al Profesor Hilario." },
+  { n: "Kyogre", tipos: ["Agua"], loc: "Zona submarina en <strong>Lisboa<\/strong>", req: "Completar la trama del Team Rocket. Interactuar con el ordenador del Palacio de las Artes y las Ciencias de Valencia." },
+  { n: "Groudon", tipos: ["Tierra"], loc: "<strong>El Teide<\/strong>", req: "Completar la trama del Team Rocket." },
+  { n: "Rayquaza", tipos: ["Dragón","Volador"], loc: "Cima de los <strong>Pirineos<\/strong>", req: "Completar la trama del Team Rocket." },
+  { n: "Jirachi", tipos: ["Acero","Psíquico"], loc: "<strong>Valle del Jerte<\/strong>", req: "Obtener la MT Zumbido de manos de la anciana." },
+  { n: "Deoxys", tipos: ["Psíquico"], loc: "Casa en <strong>Valladolid<\/strong>, disfrazado de JL", req: "Completar la trama de Franco." },
+  { n: "Uxie", tipos: ["Psíquico"], loc: "<strong>Valle del Jerte<\/strong>", req: "Luchar contra Jirachi y obtener la MT Sustituto." },
+  { n: "Azelf", tipos: ["Psíquico"], loc: "<strong>Valle del Jerte<\/strong>", req: "Luchar contra Jirachi y obtener la MT Sustituto." },
+  { n: "Mesprit", tipos: ["Psíquico"], loc: "<strong>Valle del Jerte<\/strong>", req: "Luchar contra Jirachi y obtener la MT Sustituto." },
+  { n: "Dialga", tipos: ["Acero","Dragón"], loc: "<strong>Torre Iberdrola<\/strong>", req: "Completar la trama de Franco y derrotar al Profesor Hilario." },
+  { n: "Palkia", tipos: ["Agua","Dragón"], loc: "<strong>Torre Iberdrola<\/strong>", req: "Completar la trama de Franco y derrotar al Profesor Hilario." },
+  { n: "Giratina", tipos: ["Fantasma","Dragón"], loc: "<strong>Torre Iberdrola<\/strong>", req: "Completar la trama de Franco y derrotar al Profesor Hilario." },
+  { n: "Heatran", tipos: ["Fuego","Acero"], loc: "<strong>El Teide<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Cresselia", tipos: ["Psíquico"], loc: "<strong>Alhambra<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Manaphy", tipos: ["Agua"], loc: "<strong>Oceanogràfic<\/strong>", req: "Capturar a Kyogre y llevarlo en el primer lugar del equipo." },
+  { n: "Darkrai", tipos: ["Siniestro"], loc: "<strong>Tumba de Franco<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Shaymin", tipos: ["Planta"], loc: "<strong>Valle del Jerte<\/strong>", req: "Luchar contra Jirachi y obtener la MT Sustituto." },
+  { n: "Arceus", tipos: ["Normal"], loc: "<strong>Catedral de Santiago<\/strong>", req: "Completar la trama de Franco + donar dinero a todas las iglesias + obtener MT Pulso Cura + dar limosna al vagabundo del Mercadona de Murcia 10 veces." },
+  { n: "Victini", tipos: ["Psíquico","Fuego"], loc: "Cueva secreta en la <strong>Ruta Castellana<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Cobalion", tipos: ["Acero","Lucha"], loc: "Pokémon <strong>errante<\/strong>", req: "Luchar contra Keldeo." },
+  { n: "Terrakion", tipos: ["Roca","Lucha"], loc: "Pokémon <strong>errante<\/strong>", req: "Luchar contra Keldeo." },
+  { n: "Virizion", tipos: ["Planta","Lucha"], loc: "Pokémon <strong>errante<\/strong>", req: "Luchar contra Keldeo." },
+  { n: "Keldeo", tipos: ["Agua","Lucha"], loc: "Cueva secreta en la <strong>Ruta Toledana<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Tornadus", tipos: ["Volador"], loc: "<strong>Cueva Gallega<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Thundurus", tipos: ["Eléctrico","Volador"], loc: "<strong>Cueva Gallega<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Landorus", tipos: ["Tierra","Volador"], loc: "<strong>Cueva Gallega<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Reshiram", tipos: ["Dragón","Fuego"], loc: "<strong>Sierra de Guadarrama<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Zekrom", tipos: ["Dragón","Eléctrico"], loc: "<strong>Cueva de Amboto<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Kyurem", tipos: ["Dragón","Hielo"], loc: "<strong>Sierra Nevada<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Meloetta", tipos: ["Normal","Psíquico"], loc: "<strong>Casa Lis<\/strong>", req: "Obtener la Llave Lis completando la Búsqueda de los cuadros." },
+  { n: "Genesect", tipos: ["Bicho","Acero"], loc: "<strong>Islote de Perejil<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Xerneas", tipos: ["Hada"], loc: "Cueva secreta en los <strong>Pinares de Rodeno<\/strong>", req: "Completar la trama de Franco y hablar con Errejón en la Mansión Pablemos." },
+  { n: "Yveltal", tipos: ["Siniestro","Volador"], loc: "Torre de control del <strong>Aeropuerto de Castellón<\/strong>", req: "Completar la trama de Franco y hablar con Errejón en la Mansión Pablemos." },
+  { n: "Zygarde", tipos: ["Dragón","Tierra"], loc: "Cueva secreta en la <strong>Ruta Madrileña<\/strong>", req: "Capturar a Xerneas e Yveltal primero." },
+  { n: "Diancie", tipos: ["Roca","Hada"], loc: "<strong>Cueva Maña<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Hoopa", tipos: ["Psíquico","Fantasma"], loc: "Cueva secreta en la <strong>Ruta Africana<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Volcanion", tipos: ["Fuego","Agua"], loc: "<strong>El Teide<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Código Cero", tipos: ["Normal"], loc: "Casino de <strong>Melilla<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Tapu Koko", tipos: ["Eléctrico","Hada"], loc: "<strong>Archipiélago Canario<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Tapu Lele", tipos: ["Psíquico","Hada"], loc: "<strong>Archipiélago Canario<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Tapu Bulu", tipos: ["Planta","Hada"], loc: "<strong>Archipiélago Canario<\/strong>", req: "Completar la trama de Franco." },
+  { n: "Tapu Fini", tipos: ["Agua","Hada"], loc: "<strong>Archipiélago Canario<\/strong>", req: "Completar la trama de Franco." },
   // Gen 7 - Alola
   { n: "Cosmog", tipos: ["Psíquico"], loc: "Ver wiki para localización exacta en Iberia", req: "Completar la trama de Franco. Evoluciona a Cosmoem (nv.43) → Solgaleo (nv.53, día) / Lunala (nv.53, noche)." },
   { n: "Cosmoem", tipos: ["Psíquico"], loc: "Evolución de Cosmog (nv.43)", req: "Ver Cosmog." },
@@ -2003,16 +2006,16 @@ const LEGENDARIOS = [
   { n: "Magearna", tipos: ["Acero","Hada"], loc: "Ver wiki para localización exacta en Iberia", req: "Completar la trama de Franco." },
   { n: "Marshadow", tipos: ["Lucha","Fantasma"], loc: "Ver wiki para localización exacta en Iberia", req: "Completar la trama de Franco." },
   { n: "Zeraora", tipos: ["Eléctrico"], loc: "Ver wiki para localización exacta en Iberia", req: "Completar la trama de Franco." },
-  { n: "Phione", tipos: ["Agua"], loc: "Ver wiki — posiblemente relacionado con <strong>Manaphy</strong>", req: "Posiblemente se obtiene criando a Manaphy." },
-  { n: "Silvally", tipos: ["Normal"], loc: "Evolución de <strong>Código Cero</strong>", req: "Subir la amistad de Código Cero (obtenido en el Casino de Melilla)." },
+  { n: "Phione", tipos: ["Agua"], loc: "Ver wiki — posiblemente relacionado con <strong>Manaphy<\/strong>", req: "Posiblemente se obtiene criando a Manaphy." },
+  { n: "Silvally", tipos: ["Normal"], loc: "Evolución de <strong>Código Cero<\/strong>", req: "Subir la amistad de Código Cero (obtenido en el Casino de Melilla)." },
   // Gen 8 - Galar
-  { n: "Regieleki", tipos: ["Eléctrico"], loc: "<strong>Peñón de Gibraltar</strong>", req: "Completar la trama de Franco y luchar contra Regigigas (junto a Regidrago, Regirock, Regice y Registeel)." },
-  { n: "Regidrago", tipos: ["Dragón"], loc: "<strong>Peñón de Gibraltar</strong>", req: "Completar la trama de Franco y luchar contra Regigigas (junto a Regieleki, Regirock, Regice y Registeel)." },
+  { n: "Regieleki", tipos: ["Eléctrico"], loc: "<strong>Peñón de Gibraltar<\/strong>", req: "Completar la trama de Franco y luchar contra Regigigas (junto a Regidrago, Regirock, Regice y Registeel)." },
+  { n: "Regidrago", tipos: ["Dragón"], loc: "<strong>Peñón de Gibraltar<\/strong>", req: "Completar la trama de Franco y luchar contra Regigigas (junto a Regieleki, Regirock, Regice y Registeel)." },
   { n: "Zacian", tipos: ["Hada"], loc: "Ver wiki para localización exacta en Iberia", req: "Completar la trama de Franco." },
   { n: "Zamazenta", tipos: ["Lucha"], loc: "Ver wiki para localización exacta en Iberia", req: "Completar la trama de Franco." },
   { n: "Eternatus", tipos: ["Veneno","Dragón"], loc: "Ver wiki para localización exacta en Iberia", req: "Completar la trama de Franco." },
   { n: "Kubfu", tipos: ["Lucha"], loc: "Ver wiki para localización exacta en Iberia", req: "Completar la trama de Franco. Evoluciona a Urshifu con amistad alta." },
-  { n: "Urshifu", tipos: ["Lucha","Siniestro"], loc: "Evolución de <strong>Kubfu</strong>", req: "Subir la amistad de Kubfu. Elegir forma en las Torres de Serranos (Valencia) tras completar la trama de Franco." },
+  { n: "Urshifu", tipos: ["Lucha","Siniestro"], loc: "Evolución de <strong>Kubfu<\/strong>", req: "Subir la amistad de Kubfu. Elegir forma en las Torres de Serranos (Valencia) tras completar la trama de Franco." },
   { n: "Zarude", tipos: ["Siniestro","Planta"], loc: "Ver wiki para localización exacta en Iberia", req: "Completar la trama de Franco." },
   { n: "Glastrier", tipos: ["Hielo"], loc: "Ver wiki para localización exacta en Iberia", req: "Completar la trama de Franco. Relacionado con Calyrex." },
   { n: "Spectrier", tipos: ["Fantasma"], loc: "Ver wiki para localización exacta en Iberia", req: "Completar la trama de Franco. Relacionado con Calyrex." },
@@ -2054,35 +2057,35 @@ const FORMAS = [
 
 const OBJETOS = [
   // Para legendarios
-  { cat: "🏆 Para Legendarios", n: "Mano de Santa Teresa", donde: "Se obtiene en <strong>Salamanca</strong> durante la trama principal.", uso: "Necesaria para acceder a Articuno (Sierra Nevada), Zapdos (Cueva Amboto) y Moltres (Sierra Guadarrama). Hablar con Unamuno en Salamanca después de tenerla." },
-  { cat: "🏆 Para Legendarios", n: "Ala Plateada", donde: "Entregada por el <strong>Profesor Pino en Ibiza</strong> tras completar la trama de Franco.", uso: "Necesaria para acceder a <strong>Lugia</strong> en la Isla Dragonera." },
-  { cat: "🏆 Para Legendarios", n: "Ala Arcoíris", donde: "Premio del <strong>concurso del Loro Parque</strong> en Santa Cruz de Tenerife.", uso: "Necesaria para acceder a <strong>Ho-Oh</strong> en la cima de la Giralda (Sevilla)." },
-  { cat: "🏆 Para Legendarios", n: "Llave Lis", donde: "Recompensa por completar la <strong>Búsqueda de los Cuadros</strong> (misión secundaria).", uso: "Abre la <strong>Casa Lis</strong> en Salamanca donde se encuentra <strong>Meloetta</strong>." },
-  { cat: "🏆 Para Legendarios", n: "MT Zumbido", donde: "Entregada por una <strong>anciana en el Valle del Jerte</strong>.", uso: "Necesaria para iniciar el encuentro con <strong>Jirachi</strong> en el Valle del Jerte. También desbloquea a Uxie, Azelf, Mesprit y Shaymin." },
-  { cat: "🏆 Para Legendarios", n: "MT Sustituto", donde: "Obtenida tras <strong>luchar contra Jirachi</strong> en el Valle del Jerte.", uso: "Necesaria para acceder a <strong>Uxie, Azelf, Mesprit y Shaymin</strong> en el Valle del Jerte." },
-  { cat: "🏆 Para Legendarios", n: "MT Pulso Cura", donde: "Ver wiki para localización exacta.", uso: "Necesaria (junto a donar a iglesias y dar limosna en Murcia) para acceder a <strong>Arceus</strong> en la Catedral de Santiago." },
-  { cat: "🏆 Para Legendarios", n: "Agua Mística", donde: "Entregada por <strong>Misty</strong> al lado de la Torre de Hércules (A Coruña).", uso: "Necesaria para completar ciertos requisitos de la región norte." },
-  { cat: "🏆 Para Legendarios", n: "Campana Concha", donde: "Entregada por el <strong>dueño del puesto de Octillery</strong> en la Torre de Hércules al entregarle el paquete de tabaco.", uso: "Objeto de importancia en la zona norte / misiones relacionadas." },
+  { cat: "🏆 Para Legendarios", n: "Mano de Santa Teresa", donde: "Se obtiene en <strong>Salamanca<\/strong> durante la trama principal.", uso: "Necesaria para acceder a Articuno (Sierra Nevada), Zapdos (Cueva Amboto) y Moltres (Sierra Guadarrama). Hablar con Unamuno en Salamanca después de tenerla." },
+  { cat: "🏆 Para Legendarios", n: "Ala Plateada", donde: "Entregada por el <strong>Profesor Pino en Ibiza<\/strong> tras completar la trama de Franco.", uso: "Necesaria para acceder a <strong>Lugia<\/strong> en la Isla Dragonera." },
+  { cat: "🏆 Para Legendarios", n: "Ala Arcoíris", donde: "Premio del <strong>concurso del Loro Parque<\/strong> en Santa Cruz de Tenerife.", uso: "Necesaria para acceder a <strong>Ho-Oh<\/strong> en la cima de la Giralda (Sevilla)." },
+  { cat: "🏆 Para Legendarios", n: "Llave Lis", donde: "Recompensa por completar la <strong>Búsqueda de los Cuadros<\/strong> (misión secundaria).", uso: "Abre la <strong>Casa Lis<\/strong> en Salamanca donde se encuentra <strong>Meloetta<\/strong>." },
+  { cat: "🏆 Para Legendarios", n: "MT Zumbido", donde: "Entregada por una <strong>anciana en el Valle del Jerte<\/strong>.", uso: "Necesaria para iniciar el encuentro con <strong>Jirachi<\/strong> en el Valle del Jerte. También desbloquea a Uxie, Azelf, Mesprit y Shaymin." },
+  { cat: "🏆 Para Legendarios", n: "MT Sustituto", donde: "Obtenida tras <strong>luchar contra Jirachi<\/strong> en el Valle del Jerte.", uso: "Necesaria para acceder a <strong>Uxie, Azelf, Mesprit y Shaymin<\/strong> en el Valle del Jerte." },
+  { cat: "🏆 Para Legendarios", n: "MT Pulso Cura", donde: "Ver wiki para localización exacta.", uso: "Necesaria (junto a donar a iglesias y dar limosna en Murcia) para acceder a <strong>Arceus<\/strong> en la Catedral de Santiago." },
+  { cat: "🏆 Para Legendarios", n: "Agua Mística", donde: "Entregada por <strong>Misty<\/strong> al lado de la Torre de Hércules (A Coruña).", uso: "Necesaria para completar ciertos requisitos de la región norte." },
+  { cat: "🏆 Para Legendarios", n: "Campana Concha", donde: "Entregada por el <strong>dueño del puesto de Octillery<\/strong> en la Torre de Hércules al entregarle el paquete de tabaco.", uso: "Objeto de importancia en la zona norte / misiones relacionadas." },
 
   // Para misiones
-  { cat: "📋 Para Misiones", n: "Paquetes de Tabaco", donde: "Repartidos por distintas ciudades de Iberia. El primero se recibe en <strong>Gibraltar</strong>.", uso: "Entregar todos al <strong>vendedor de tabaco de Gibraltar</strong> → recompensa: <strong>Charmander</strong>. Algunos paquetes intermedios desbloquean objetos (ej. Campana Concha en Torre de Hércules)." },
-  { cat: "📋 Para Misiones", n: "Jamón de Bellota", donde: "Se obtiene en la <strong>Jamonería</strong> de Iberia (misión secundaria).", uso: "Mostrárselo al <strong>legionario en Melilla</strong> para recibir el huevo de <strong>Skiddo Forma Iberia</strong>." },
-  { cat: "📋 Para Misiones", n: "Chistorra", donde: "Se obtiene durante la <strong>misión secundaria Chistorra</strong>.", uso: "Intercambiarla por el <strong>Rioja Extra</strong>, objeto de batalla especial." },
-  { cat: "📋 Para Misiones", n: "Rioja / Rioja Extra", donde: "<strong>Rioja</strong>: misión secundaria Rioja. <strong>Rioja Extra</strong>: intercambiar la Chistorra.", uso: "El Rioja Extra es un objeto de combate especial (equivalente a X-item). El Rioja normal forma parte de la cadena de misiones." },
-  { cat: "📋 Para Misiones", n: "Tarjeta Aeropuerto", donde: "Se obtiene cumpliendo ciertos requisitos durante la aventura. Ver misión secundaria <strong>Tarjeta Aeropuerto</strong>.", uso: "Permite acceder a los <strong>vuelos entre ciudades distantes</strong> (necesaria para ir a Canarias y otras zonas)." },
+  { cat: "📋 Para Misiones", n: "Paquetes de Tabaco", donde: "Repartidos por distintas ciudades de Iberia. El primero se recibe en <strong>Gibraltar<\/strong>.", uso: "Entregar todos al <strong>vendedor de tabaco de Gibraltar<\/strong> → recompensa: <strong>Charmander<\/strong>. Algunos paquetes intermedios desbloquean objetos (ej. Campana Concha en Torre de Hércules)." },
+  { cat: "📋 Para Misiones", n: "Jamón de Bellota", donde: "Se obtiene en la <strong>Jamonería<\/strong> de Iberia (misión secundaria).", uso: "Mostrárselo al <strong>legionario en Melilla<\/strong> para recibir el huevo de <strong>Skiddo Forma Iberia<\/strong>." },
+  { cat: "📋 Para Misiones", n: "Chistorra", donde: "Se obtiene durante la <strong>misión secundaria Chistorra<\/strong>.", uso: "Intercambiarla por el <strong>Rioja Extra<\/strong>, objeto de batalla especial." },
+  { cat: "📋 Para Misiones", n: "Rioja / Rioja Extra", donde: "<strong>Rioja<\/strong>: misión secundaria Rioja. <strong>Rioja Extra<\/strong>: intercambiar la Chistorra.", uso: "El Rioja Extra es un objeto de combate especial (equivalente a X-item). El Rioja normal forma parte de la cadena de misiones." },
+  { cat: "📋 Para Misiones", n: "Tarjeta Aeropuerto", donde: "Se obtiene cumpliendo ciertos requisitos durante la aventura. Ver misión secundaria <strong>Tarjeta Aeropuerto<\/strong>.", uso: "Permite acceder a los <strong>vuelos entre ciudades distantes<\/strong> (necesaria para ir a Canarias y otras zonas)." },
 
   // Evolutivos especiales
-  { cat: "💎 Evolutivos Especiales", n: "Alakazamita", donde: "Obtención desconocida (ver wiki).", uso: "Permite Mega-evolucionar a <strong>Alakazam Forma Iberia</strong> en combate." },
-  { cat: "💎 Evolutivos Especiales", n: "Piedra Fuego", donde: "Vendida en tiendas avanzadas / encontrada en el mapa.", uso: "Evoluciona <strong>Lombre Forma Iberia → Ludicolo Forma Iberia</strong> (entre otros usos oficiales)." },
-  { cat: "💎 Evolutivos Especiales", n: "Piedra Trueno", donde: "Vendida en tiendas / encontrada en el mapa.", uso: "Evoluciona <strong>Nosepass Forma Iberia → Probopass Forma Iberia</strong> (cerca de la Torre de Control)." },
-  { cat: "💎 Evolutivos Especiales", n: "Piedra Solar / Piedra Noche", donde: "Encontradas en el mapa.", uso: "<strong>Piedra Solar</strong>: Cosmoem → Solgaleo. <strong>Piedra Noche</strong>: Cosmoem → Lunala (según wiki de evoluciones de Iberia)." },
+  { cat: "💎 Evolutivos Especiales", n: "Alakazamita", donde: "Obtención desconocida (ver wiki).", uso: "Permite Mega-evolucionar a <strong>Alakazam Forma Iberia<\/strong> en combate." },
+  { cat: "💎 Evolutivos Especiales", n: "Piedra Fuego", donde: "Vendida en tiendas avanzadas / encontrada en el mapa.", uso: "Evoluciona <strong>Lombre Forma Iberia → Ludicolo Forma Iberia<\/strong> (entre otros usos oficiales)." },
+  { cat: "💎 Evolutivos Especiales", n: "Piedra Trueno", donde: "Vendida en tiendas / encontrada en el mapa.", uso: "Evoluciona <strong>Nosepass Forma Iberia → Probopass Forma Iberia<\/strong> (cerca de la Torre de Control)." },
+  { cat: "💎 Evolutivos Especiales", n: "Piedra Solar / Piedra Noche", donde: "Encontradas en el mapa.", uso: "<strong>Piedra Solar<\/strong>: Cosmoem → Solgaleo. <strong>Piedra Noche<\/strong>: Cosmoem → Lunala (según wiki de evoluciones de Iberia)." },
   { cat: "💎 Evolutivos Especiales", n: "Cordón Unión", donde: "En distorsiones espaciotemporales, en el Puesto de Trueque o en la tienda de Bilo.", uso: "Sustituye al intercambio para evolucionar Pokémon que en los juegos oficiales evolucionan comerciando (Alakazam, Gengar, etc.)." },
 
   // Objetos de viaje
-  { cat: "🗺️ Acceso a Zonas", n: "Equipo de Escalada", donde: "Se obtiene durante la <strong>trama principal</strong> en la zona norte.", uso: "Necesario para escalar ciertos paredones y acceder a zonas elevadas como los Pirineos." },
-  { cat: "🗺️ Acceso a Zonas", n: "MO Surf", donde: "Recompensa de gimnasio (Medalla correspondiente).", uso: "Imprescindible para cruzar ríos y mares. Necesaria para llegar a la <strong>Ribeira Sacra, Lisboa, Isla Dragonera</strong> y muchas otras zonas." },
+  { cat: "🗺️ Acceso a Zonas", n: "Equipo de Escalada", donde: "Se obtiene durante la <strong>trama principal<\/strong> en la zona norte.", uso: "Necesario para escalar ciertos paredones y acceder a zonas elevadas como los Pirineos." },
+  { cat: "🗺️ Acceso a Zonas", n: "MO Surf", donde: "Recompensa de gimnasio (Medalla correspondiente).", uso: "Imprescindible para cruzar ríos y mares. Necesaria para llegar a la <strong>Ribeira Sacra, Lisboa, Isla Dragonera<\/strong> y muchas otras zonas." },
   { cat: "🗺️ Acceso a Zonas", n: "MO Vuelo", donde: "Recompensa de gimnasio avanzado.", uso: "Permite volar a ciudades ya visitadas para desplazarse rápido por Iberia." },
-  { cat: "🗺️ Acceso a Zonas", n: "MO Golpe Roca", donde: "Recompensa de gimnasio inicial.", uso: "Necesaria para romper rocas en cuevas. Imprescindible para acceder a la sala de <strong>Suicune</strong> en la Cueva Balear." },
+  { cat: "🗺️ Acceso a Zonas", n: "MO Golpe Roca", donde: "Recompensa de gimnasio inicial.", uso: "Necesaria para romper rocas en cuevas. Imprescindible para acceder a la sala de <strong>Suicune<\/strong> en la Cueva Balear." },
   { cat: "🗺️ Acceso a Zonas", n: "MO Fuerza", donde: "Recompensa de gimnasio intermedio.", uso: "Necesaria para mover grandes rocas que bloquean el paso en cuevas y mazmorras." },
 
   // Objetos de combate
@@ -2993,7 +2996,7 @@ const POKEDEX = [
 ];
 
 
-function tipoSpan(t){return `<span class="tipo t-${t}">${t}</span>`;}
+function tipoSpan(t){return `<span class="tipo t-${t}">${t}<\/span>`;}
 
 function showTab(id,btn){
   document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
@@ -3006,10 +3009,10 @@ function renderRutas(){
   const c=document.getElementById('rutas-container');
   c.innerHTML=RUTAS.map((r,i)=>{
     const z=r.zonas.map(z=>{
-      const rows=z.pokes.map(p=>`<tr><td><strong>${p.n}</strong></td><td>${p.tipos.map(tipoSpan).join('')}</td><td class="niveles">${p.niveles}</td><td class="pct">${p.ratio}</td></tr>`).join('');
-      return `<div class="habitat-label">📍 ${z.habitat}</div><table><thead><tr><th>Pokémon</th><th>Tipo</th><th>Niveles</th><th>%</th></tr></thead><tbody>${rows}</tbody></table>`;
+      const rows=z.pokes.map(p=>`<tr><td><strong>${p.n}<\/strong><\/td><td>${p.tipos.map(tipoSpan).join('')}<\/td><td class="niveles">${p.niveles}<\/td><td class="pct">${p.ratio}<\/td><\/tr>`).join('');
+      return `<div class="habitat-label">📍 ${z.habitat}<\/div><table><thead><tr><th>Pokémon<\/th><th>Tipo<\/th><th>Niveles<\/th><th>%<\/th><\/tr><\/thead><tbody>${rows}<\/tbody><\/table>`;
     }).join('');
-    return `<div class="ruta-card" id="rc${i}"><div class="ruta-header" onclick="toggleRuta(${i})"><span class="ruta-num" title="#${r.num}">${String(r.step).padStart(2,'0')}</span><span class="ruta-nombre">${r.nombre} <small style="color:var(--texto-suave);font-size:0.75rem">#${r.num}</small></span><span class="ruta-toggle" id="rt${i}">▼</span></div><div class="ruta-body" id="rb${i}">${z}</div></div>`;
+    return `<div class="ruta-card" id="rc${i}"><div class="ruta-header" onclick="toggleRuta(${i})"><span class="ruta-num" title="#${r.num}">${String(r.step).padStart(2,'0')}<\/span><span class="ruta-nombre">${r.nombre} <small style="color:var(--texto-suave);font-size:0.75rem">#${r.num}<\/small><\/span><span class="ruta-toggle" id="rt${i}">▼<\/span><\/div><div class="ruta-body" id="rb${i}">${z}<\/div><\/div>`;
   }).join('');
 }
 function toggleRuta(i){
@@ -3029,7 +3032,7 @@ function filtrarRutas(){
 
 function renderEspecial(){
   document.getElementById('count-especial').textContent=ESPECIAL.length;
-  document.getElementById('especial-container').innerHTML=ESPECIAL.map((e,i)=>`<div class="especial-item" id="esp${i}"><div class="especial-poke">⭐ ${e.n}</div><div class="especial-como">${e.como}</div></div>`).join('');
+  document.getElementById('especial-container').innerHTML=ESPECIAL.map((e,i)=>`<div class="especial-item" id="esp${i}"><div class="especial-poke">⭐ ${e.n}<\/div><div class="especial-como">${e.como}<\/div><\/div>`).join('');
 }
 function filtrarEspecial(){
   const q=document.getElementById('buscar-especial').value.toLowerCase();
@@ -3038,8 +3041,8 @@ function filtrarEspecial(){
 
 function renderMisiones(){
   document.getElementById('misiones-container').innerHTML=MISIONES.map((m,i)=>{
-    const pasos=m.pasos.map((p,j)=>`<div style="display:flex;gap:8px;margin-bottom:6px"><span style="background:var(--rojo);color:#fff;border-radius:50%;width:20px;height:20px;min-width:20px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800">${j+1}</span><span style="font-size:0.83rem;color:var(--texto-suave);line-height:1.5">${p}</span></div>`).join('');
-    return `<div class="mision-card"><div class="mision-header" onclick="toggleMision(${i})"><div class="mision-icon">${m.icono}</div><div class="mision-titulo">${m.titulo}</div><span class="ruta-toggle" id="mt${i}">▼</span></div><div class="mision-body" id="mb${i}"><p style="margin-bottom:10px;font-size:0.83rem"><strong>📍 Inicio:</strong> ${m.inicio}</p><p style="margin-bottom:8px;font-weight:700;color:var(--texto);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.8px">Pasos:</p>${pasos}<div style="margin-top:10px"><span class="reward">🎁 ${m.recompensa}</span></div></div></div>`;
+    const pasos=m.pasos.map((p,j)=>`<div style="display:flex;gap:8px;margin-bottom:6px"><span style="background:var(--rojo);color:#fff;border-radius:50%;width:20px;height:20px;min-width:20px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800">${j+1}<\/span><span style="font-size:0.83rem;color:var(--texto-suave);line-height:1.5">${p}<\/span><\/div>`).join('');
+    return `<div class="mision-card"><div class="mision-header" onclick="toggleMision(${i})"><div class="mision-icon">${m.icono}<\/div><div class="mision-titulo">${m.titulo}<\/div><span class="ruta-toggle" id="mt${i}">▼<\/span><\/div><div class="mision-body" id="mb${i}"><p style="margin-bottom:10px;font-size:0.83rem"><strong>📍 Inicio:<\/strong> ${m.inicio}<\/p><p style="margin-bottom:8px;font-weight:700;color:var(--texto);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.8px">Pasos:<\/p>${pasos}<div style="margin-top:10px"><span class="reward">🎁 ${m.recompensa}<\/span><\/div><\/div><\/div>`;
   }).join('');
 }
 function toggleMision(i){
@@ -3049,7 +3052,7 @@ function toggleMision(i){
 
 function renderLeg(){
   document.getElementById('count-leg').textContent=LEGENDARIOS.length;
-  document.getElementById('leg-container').innerHTML=LEGENDARIOS.map((l,i)=>`<div class="especial-item" id="leg${i}"><div style="min-width:130px"><div style="font-weight:800;color:var(--amarillo);font-size:0.88rem">✨ ${l.n}</div><div style="margin-top:3px">${l.tipos.map(tipoSpan).join('')}</div></div><div style="font-size:0.83rem;line-height:1.6;color:var(--texto-suave)"><div>📍 ${l.loc}</div><div style="margin-top:3px">⚠️ ${l.req}</div></div></div>`).join('');
+  document.getElementById('leg-container').innerHTML=LEGENDARIOS.map((l,i)=>`<div class="especial-item" id="leg${i}"><div style="min-width:130px"><div style="font-weight:800;color:var(--amarillo);font-size:0.88rem">✨ ${l.n}<\/div><div style="margin-top:3px">${l.tipos.map(tipoSpan).join('')}<\/div><\/div><div style="font-size:0.83rem;line-height:1.6;color:var(--texto-suave)"><div>📍 ${l.loc}<\/div><div style="margin-top:3px">⚠️ ${l.req}<\/div><\/div><\/div>`).join('');
 }
 function filtrarLeg(){
   const q=document.getElementById('buscar-leg').value.toLowerCase();
@@ -3057,7 +3060,7 @@ function filtrarLeg(){
 }
 
 function renderFormas(){
-  document.getElementById('formas-container').innerHTML=FORMAS.map((f,i)=>`<div class="especial-item" id="fo${i}"><div style="min-width:160px"><div style="font-weight:800;color:#a29bfe;font-size:0.88rem">🦎 ${f.n}</div><div style="font-size:0.72rem;color:var(--texto-suave);margin-top:2px">Base: <em>${f.base}</em></div><div style="margin-top:4px">${f.tipos.map(tipoSpan).join('')}</div></div><div style="font-size:0.83rem;line-height:1.6;color:var(--texto-suave)"><div>📍 ${f.loc}</div><div style="margin-top:3px">🔄 ${f.evo}</div></div></div>`).join('');
+  document.getElementById('formas-container').innerHTML=FORMAS.map((f,i)=>`<div class="especial-item" id="fo${i}"><div style="min-width:160px"><div style="font-weight:800;color:#a29bfe;font-size:0.88rem">🦎 ${f.n}<\/div><div style="font-size:0.72rem;color:var(--texto-suave);margin-top:2px">Base: <em>${f.base}<\/em><\/div><div style="margin-top:4px">${f.tipos.map(tipoSpan).join('')}<\/div><\/div><div style="font-size:0.83rem;line-height:1.6;color:var(--texto-suave)"><div>📍 ${f.loc}<\/div><div style="margin-top:3px">🔄 ${f.evo}<\/div><\/div><\/div>`).join('');
 }
 function filtrarFormas(){
   const q=document.getElementById('buscar-formas').value.toLowerCase();
@@ -3069,10 +3072,10 @@ function renderObjetos(){
   let h='';
   for(const cat of OBJ_CATS){
     const items=OBJETOS.filter(o=>o.cat===cat);
-    h+=`<p class="section-title" style="margin-top:16px">${cat} <span class="count-badge">${items.length}</span></p>`;
+    h+=`<p class="section-title" style="margin-top:16px">${cat} <span class="count-badge">${items.length}<\/span><\/p>`;
     items.forEach(o=>{
       const idx=OBJETOS.indexOf(o);
-      h+=`<div class="especial-item" id="obj${idx}"><div style="min-width:160px"><div style="font-weight:800;color:var(--amarillo);font-size:0.88rem">🎒 ${o.n}</div></div><div style="font-size:0.83rem;line-height:1.6;color:var(--texto-suave)"><div>📍 <strong style="color:var(--texto)">Dónde:</strong> ${o.donde}</div><div style="margin-top:3px">✅ <strong style="color:var(--texto)">Uso:</strong> ${o.uso}</div></div></div>`;
+      h+=`<div class="especial-item" id="obj${idx}"><div style="min-width:160px"><div style="font-weight:800;color:var(--amarillo);font-size:0.88rem">🎒 ${o.n}<\/div><\/div><div style="font-size:0.83rem;line-height:1.6;color:var(--texto-suave)"><div>📍 <strong style="color:var(--texto)">Dónde:<\/strong> ${o.donde}<\/div><div style="margin-top:3px">✅ <strong style="color:var(--texto)">Uso:<\/strong> ${o.uso}<\/div><\/div><\/div>`;
     });
   }
   document.getElementById('obj-container').innerHTML=h;
@@ -3084,7 +3087,7 @@ function filtrarObjetos(){
 
 function renderDex(list){
   const B='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
-  document.getElementById('dex-container').innerHTML=list.map(([num,name,tipos])=>`<div class="ruta-card" style="padding:8px;text-align:center"><img src="${B}${num}.png" loading="lazy" width="56" height="56" alt="${name}" onerror="this.style.display='none'" style="image-rendering:pixelated"><div style="font-size:0.62rem;color:var(--texto-suave);margin:2px 0">#${String(num).padStart(3,'0')}</div><div style="font-size:0.75rem;font-weight:700;line-height:1.2;margin-bottom:3px">${name}</div><div>${tipos.map(tipoSpan).join('')}</div></div>`).join('');
+  document.getElementById('dex-container').innerHTML=list.map(([num,name,tipos])=>`<div class="ruta-card" style="padding:8px;text-align:center"><img src="${B}${num}.png" loading="lazy" width="56" height="56" alt="${name}" onerror="this.style.display='none'" style="image-rendering:pixelated"><div style="font-size:0.62rem;color:var(--texto-suave);margin:2px 0">#${String(num).padStart(3,'0')}<\/div><div style="font-size:0.75rem;font-weight:700;line-height:1.2;margin-bottom:3px">${name}<\/div><div>${tipos.map(tipoSpan).join('')}<\/div><\/div>`).join('');
   document.getElementById('dex-count').textContent=list.length+' Pokémon';
 }
 function filtrarDex(){
